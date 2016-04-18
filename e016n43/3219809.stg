@@ -1,0 +1,9 @@
+OBJECT_SHARED Models/Airport/ils.xml 16.289128 43.532669 16.97 305.44
+OBJECT_SHARED Models/Airport/marker.ac 16.276972 43.527261 -3.68 180
+OBJECT_SHARED Models/Airport/localizer.xml 16.314025 43.547878 21.16 142.5
+OBJECT_SHARED Models/Maritime/Misc/GreenBuoy.xml 16.2542874 43.5169724 0 207.46
+OBJECT_SHARED Models/Maritime/Misc/GreenBuoy.xml 16.3865518 43.5124418 -0.14 93.08
+OBJECT_SHARED Models/Maritime/Misc/GreenBuoy.xml 16.4304529 43.5042132 0 66.86
+OBJECT_SHARED Models/Maritime/Misc/Buoy-Cylindrical-Yellow.ac 16.4317191 43.5044624 0 84.62
+OBJECT_SHARED Models/Maritime/Misc/Buoy-Cylindrical-Yellow.ac 16.4344673 43.5057011 0 210.91
+OBJECT_STATIC SplitTower.xml 16.29933 43.53739 15.74 308
