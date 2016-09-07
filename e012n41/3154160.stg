@@ -33,3 +33,5 @@ OBJECT_SHARED Models/Aircraft/747-400-fwa-static.xml 12.24070859 41.79606672 1.9
 OBJECT_SHARED Models/Aircraft/747-400-fwa-static.xml 12.24105985 41.79637914 1.92 192
 OBJECT_SHARED Models/Aircraft/A320_services.xml 12.24173866 41.79668029 1.96 288
 OBJECT_SHARED Models/Aircraft/A320_services.xml 12.24696682 41.79629505 2.29 16
+OBJECT_SHARED Models/Airport/Jetway/generic.xml 12.246639 41.794 2.39 90
+OBJECT_SHARED Models/Airport/Jetway/generic.xml 12.247213 41.794096 2.44 80
