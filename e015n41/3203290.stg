@@ -1,3 +1,15 @@
 OBJECT_SHARED Models/Airport/ndb.ac 15.531389 41.430833 83.02 180
 OBJECT_SHARED Models/Residential/grdimmeuble.xml 15.549238 41.458207 86.94 0
 OBJECT_SHARED Models/Commercial/Retail130x65Combo.ac 15.542516 41.447351 71.32 0
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/lib/HorizTanks2.ac 15.54346 41.43093 76.32 113.75
+OBJECT_SHARED Models/lib/FireStationLg.ac 15.54464 41.43240 76.50 186.45
+OBJECT_SHARED Models/lib/SmHangar.ac 15.54413 41.43199 76.51 276.58
+OBJECT_SHARED Models/Airport/tower_small_airfield.xml 15.54394 41.43383 75.04 5.76999
+OBJECT_SHARED Models/lib/lamp10m.xml 15.54401 41.43244 75.60 0
+OBJECT_SHARED Models/lib/lamp10m.xml 15.54394 41.43333 75.16 0
+OBJECT_SHARED Models/lib/lamp10m.xml 15.54369 41.43443 75.81 0
+OBJECT_SHARED Models/lib/lamp10m.xml 15.54356 41.43512 73.68 0
+# END dsf2stg

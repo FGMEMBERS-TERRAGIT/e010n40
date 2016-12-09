@@ -7,3 +7,10 @@ OBJECT_SHARED Models/Power/windturbine.xml 10.7675 49.0005556 625.61 180
 OBJECT_SHARED Models/Power/windturbine.xml 10.7680556 49.0047222 615.58 180
 OBJECT_SHARED Models/Maritime/Misc/right_bank_beacon.ac 10.9307469 49.1248547 405.15 227.66
 OBJECT_SHARED Models/Maritime/Misc/left_bank_beacon.ac 10.9301292 49.1246828 405.61 277.14
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/Transport/hatchback_red.ac 10.88013 49.00103 410.06 205.87
+OBJECT_SHARED Models/Transport/hatchback_red.ac 10.88008 49.00111 410.18 20.9
+OBJECT_SHARED Models/Misc/picnic_table.ac 10.88011 49.00114 410.18 196.28
+# END dsf2stg

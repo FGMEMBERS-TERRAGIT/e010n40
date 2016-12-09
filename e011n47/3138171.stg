@@ -22,3 +22,8 @@ OBJECT_SHARED Models/Power/generic_pylon_50m.ac 11.7976433 47.9567937 650.36 112
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 11.7985527 47.9553722 644.16 113.19
 OBJECT_SHARED Models/Airport/RectangularGroundmarker_RedWhite.xml 11.9951928 47.963 488.5 310
 OBJECT_SHARED Models/Misc/Church_generic_twintower_oniondome.ac 11.95721 47.8870454 495.62 10
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/Airport/Avgas_Pump.ac 11.99667 47.96042 489.58 133.33
+# END dsf2stg

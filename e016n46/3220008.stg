@@ -37,3 +37,13 @@ OBJECT_SHARED Models/Misc/church36m_blue2.ac 16.1654026 46.6622902 192.24 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 16.1700799 46.6578343 190.17 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 16.1950536 46.7112176 213.41 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 16.195293 46.6502648 188.07 180
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/lib/MedHangar.ac 16.17969 46.63086 184.54 37.659
+OBJECT_SHARED Models/Airport/Avgas_Pump.ac 16.18023 46.63049 184.41 309.644
+OBJECT_SHARED Models/Aircraft/Cessna172_red.xml 16.17874 46.63130 184.37 221.104
+OBJECT_SHARED Models/Transport/hatchback_blue.ac 16.17910 46.63194 184.29 135
+OBJECT_SHARED Models/Transport/hatchback_red.ac 16.17907 46.63196 184.27 135
+OBJECT_SHARED Models/Airport/tower_small_airfield.xml 16.17941 46.63152 184.40 131.423
+# END dsf2stg

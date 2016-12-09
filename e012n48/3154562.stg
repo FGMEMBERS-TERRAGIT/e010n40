@@ -4,3 +4,9 @@ OBJECT_SHARED Models/Power/windturbine.xml 12.6466667 48.0352778 540.46 180
 OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 12.5511111 48.0186111 65.35 180
 OBJECT_SHARED Models/Misc/generic_church_03.ac 12.5858333 48.0472222 522.46 180
 OBJECT_SHARED Models/Misc/generic_church_03.ac 12.6377778 48.0008333 532.17 180
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/Aircraft/Cessna172_red.xml 12.50294 48.04823 538.53 280
+OBJECT_SHARED Models/Airport/tower_small_airfield.xml 12.50305 48.04831 538.14 8
+# END dsf2stg

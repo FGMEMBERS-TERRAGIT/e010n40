@@ -11,3 +11,8 @@ OBJECT_SHARED Models/Misc/church36m_blue.ac 14.1574117 46.3357411 501.68 180
 OBJECT_SHARED Models/Misc/church36m_blue.ac 14.198915 46.3744502 568.8 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 14.0901896 46.3625394 467.99 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 14.1043917 46.3704866 499.65 180
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/Airport/Avgas_Pump.ac 14.17184 46.36033 505.47 309.746
+# END dsf2stg

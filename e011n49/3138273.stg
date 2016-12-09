@@ -89,3 +89,23 @@ OBJECT_SHARED Models/Power/generic_pylon_50m.ac 11.4885752 49.5079388 344.62 49.
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 11.4905407 49.5093098 345.27 230.7
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 11.4937937 49.5118901 350.6 230.82
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 11.4961969 49.5138128 359.96 230.94
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/Transport/hatchback_red.ac 11.44040 49.50726 335.83 197.3
+OBJECT_SHARED Models/Transport/hatchback_red.ac 11.44047 49.50726 335.97 199.77
+OBJECT_SHARED Models/Transport/hatchback_red.ac 11.44054 49.50727 335.97 222.05
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.43954 49.50717 334.68 144.09
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44113 49.50828 336.81 328.17
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44119 49.50839 336.77 120.39
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44126 49.50839 336.76 38.79
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44129 49.50829 336.69 142.77
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44143 49.50829 336.72 305.54
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44211 49.50812 336.76 116.75
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44257 49.50809 336.86 5.82001
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44544 49.50593 336.32 331.7
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44536 49.50621 336.30 270
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44540 49.50634 336.29 313.15
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44534 49.50643 336.27 117.47
+OBJECT_SHARED Models/Trees/billboard-tree.xml 11.44527 49.50667 336.25 310.24
+# END dsf2stg
