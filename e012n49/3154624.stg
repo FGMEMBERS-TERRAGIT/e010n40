@@ -70,4 +70,5 @@ OBJECT_SHARED Models/Maritime/Misc/Buoy-Cylindrical-Yellow.ac 12.0745883 49.0293
 OBJECT_SHARED Models/Maritime/Misc/Buoy-Cylindrical-Yellow.ac 12.0752001 49.0294436 328.83 66.04
 OBJECT_SHARED Models/Maritime/Misc/Buoy-Cylindrical-Yellow.ac 12.0753411 49.0281578 330.47 140.55
 OBJECT_SHARED Models/Maritime/Misc/Buoy-Cylindrical-Yellow.ac 12.0754652 49.0280621 329.5 344.04
+OBJECT_SHARED Models/Maritime/Civilian/Binnenschiff.ac 12.22444735 49.0272422 323.82 72
 OBJECT_STATIC whreg.ac 12.22403682 49.0312013 393.69 96

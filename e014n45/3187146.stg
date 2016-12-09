@@ -11,4 +11,11 @@ OBJECT_SHARED Models/Maritime/Misc/RedBuoy.xml 14.5362843 45.2065228 -0.02 146.0
 OBJECT_SHARED Models/Maritime/Misc/RedBuoy.xml 14.5383324 45.2323915 -0.01 123.73
 OBJECT_SHARED Models/Maritime/Misc/RedBuoy.xml 14.5452606 45.2253875 -0.02 198.58
 OBJECT_SHARED Models/Maritime/Misc/RedBuoy.xml 14.5472861 45.2210758 -0.02 265.93
+OBJECT_SHARED Models/Industrial/generic_tank_020m_grey.ac 14.529333 45.224823 -31.23 0
+OBJECT_SHARED Models/Industrial/generic_tank_020m_grey.ac 14.529805 45.223614 -30.15 0
+OBJECT_SHARED Models/Industrial/generic_tank_020m_grey.ac 14.530621 45.225972 -23.28 0
+OBJECT_SHARED Models/Industrial/generic_tank_020m_grey.ac 14.530706 45.222254 -32.01 0
+OBJECT_SHARED Models/Industrial/generic_tank_020m_grey.ac 14.531608 45.2244 -22.99 0
+OBJECT_SHARED Models/Industrial/generic_tank_020m_grey.ac 14.532166 45.219533 -17.61 0
+OBJECT_SHARED Models/Industrial/generic_tank_020m_grey.ac 14.532595 45.218415 -24.62 0
 OBJECT_SHARED Models/Maritime/Misc/Buoy-IsolatedDanger.ac 14.5134302 45.2278247 -0.86 184.92

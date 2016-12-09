@@ -9,6 +9,7 @@ OBJECT_SHARED Models/Maritime/Misc/right_bank_beacon.ac 12.4241249 45.4229987 -0
 OBJECT_SHARED Models/Maritime/Misc/left_bank_beacon.ac 12.3698538 45.4233542 0 52.36
 OBJECT_SHARED Models/Maritime/Misc/left_bank_beacon.ac 12.4068303 45.4338434 -0.01 10.26
 OBJECT_SHARED Models/Maritime/Misc/left_bank_beacon.ac 12.4258237 45.4253824 -0.02 76.03
+OBJECT_SHARED Models/Maritime/Civilian/Lighthouse.xml 12.43673 45.42274 -2.4 0
 OBJECT_SHARED Models/Communications/Antenna3.ac 12.296861 45.479008 0.9 30
 OBJECT_SHARED Models/Communications/Measurement-Mast-80m.xml 12.296925 45.479798 -0.29 30
 OBJECT_STATIC PiazzaSM.ac 12.33845 45.4337 9.73 202
