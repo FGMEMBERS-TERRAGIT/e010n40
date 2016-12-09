@@ -84,3 +84,4 @@ OBJECT_SHARED Models/Trees/billboard-tree.xml 13.02416 43.82038 2.85 0
 OBJECT_SHARED Models/Aircraft/Zlin50xl_low_poly.xml 13.02619 43.82191 5.78 133.37
 OBJECT_SHARED Models/Aircraft/Cessna172_red.xml 13.02487 43.82147 5.40 222.48
 # END dsf2stg
+OBJECT_SHARED Models/Maritime/Civilian/Lighthouse.xml 13.015412 43.851019 -2.4 0

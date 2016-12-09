@@ -149,3 +149,4 @@ OBJECT_SHARED Models/lib/lamp10m.xml 17.93778 40.65787 11.02 38.48
 OBJECT_SHARED Models/lib/lamp10m.xml 17.93639 40.65677 11.61 270
 OBJECT_SHARED Models/lib/lamp10m.xml 17.93667 40.65655 11.59 53.56
 # END dsf2stg
+OBJECT_SHARED Models/Maritime/Civilian/Lighthouse.xml 17.967477 40.655386 -2.4 0

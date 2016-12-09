@@ -8,3 +8,4 @@ OBJECT_SHARED Models/lib/rw-guard-lights.ac 16.74637 41.13281 53.47 202.77
 OBJECT_SHARED Models/lib/rw-guard-lights.ac 16.74791 41.13368 51.78 327.6
 OBJECT_SHARED Models/lib/rw-guard-lights.ac 16.74816 41.13397 51.39 325.74
 # END dsf2stg
+OBJECT_SHARED Models/Maritime/Civilian/Lighthouse.xml 16.594194 41.208042 -1.72 0

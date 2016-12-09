@@ -113,3 +113,4 @@ OBJECT_SHARED Models/lib/office32x25.ac 12.61875 44.02311 4.49 47.97
 OBJECT_SHARED Models/lib/office32x25.ac 12.62003 44.02273 4.56 138.88
 OBJECT_SHARED Models/lib/watertank3x1.ac 12.61555 44.02466 3.93 0
 # END dsf2stg
+OBJECT_SHARED Models/Maritime/Civilian/Lighthouse.xml 12.573886 44.074117 -1.97 0

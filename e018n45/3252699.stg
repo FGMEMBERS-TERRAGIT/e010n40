@@ -40,3 +40,6 @@ OBJECT_SHARED Models/lib/lamp10m.xml 18.80770 45.46600 82.99 0
 OBJECT_SHARED Models/lib/lamp10m.xml 18.80680 45.46624 82.99 0
 OBJECT_SHARED Models/lib/lamp10m.xml 18.80568 45.46653 82.99 0
 # END dsf2stg
+OBJECT_SHARED Models/Airport/apt-light.xml 18.805718 45.466534 82.99 0
+OBJECT_SHARED Models/Airport/apt-light.xml 18.807671 45.46603 83 0
+OBJECT_SHARED Models/Airport/apt-light.xml 18.808712 45.465737 83.06 0

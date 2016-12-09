@@ -159,3 +159,4 @@ OBJECT_SHARED Models/Airport/tower_small_airfield.xml 14.18922 42.43257 10.53 51
 OBJECT_SHARED Models/lib/FireStationLg.ac 14.18530 42.42961 11.49 105.69
 OBJECT_SHARED Models/lib/office32x25.ac 14.18564 42.42957 11.51 16.38
 # END dsf2stg
+OBJECT_SHARED Models/Maritime/Civilian/Lighthouse.xml 14.228975 42.465347 -1.74 0
