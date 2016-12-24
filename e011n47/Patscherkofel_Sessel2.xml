@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+<path>Patscherkofel_Sessel2.ac</path>
+
+<!-- Winter Ground -->     
+	<animation>
+		<type>textranslate</type> 
+		<object-name>ground</object-name>
+			<condition>
+				<equals>
+					<property>sim/startup/season</property>
+					<value>winter</value>
+				</equals>
+			</condition>
+			<offset>0.50</offset>
+			<center>
+				<x-m> 0 </x-m>
+				<y-m> 0 </y-m>
+				<z-m> 0 </z-m>
+			</center>
+			<axis>
+				<x> 0 </x>
+				<y>-1 </y>
+				<z> 0 </z>
+			</axis>
+	</animation>
+  
+<!-- Winter Roof --> 
+	<animation>
+	<type>select</type>  
+	<object-name>snow</object-name>
+		<condition>
+			<equals>
+				<property>sim/startup/season</property>
+				<value>winter</value>
+			</equals>
+		</condition>
+	</animation>
+
+<!-- UNIMOG 
+	<model>
+	<name>UNIMOG</name>
+	<path>Models/Transport/UNIMOGFire.xml</path>
+		<offsets>
+			<x-m>-8.5</x-m>
+			<y-m>-25.6</y-m>
+			<z-m>-3.0</z-m>
+			<roll-deg>0.0</roll-deg>
+			<pitch-deg>0.0</pitch-deg>
+			<heading-deg>0.0</heading-deg>
+		</offsets>
+	</model>
+	-->
+	
+<!--Lamps -->
+	<model>
+	<name>Lamp1</name>
+	<path>Patscherkofel_WallLamp3_5m.xml</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>-15.0</y-m>
+			<z-m>0.0</z-m>
+			<roll-deg>0.0</roll-deg>
+			<pitch-deg>0.0</pitch-deg>
+			<heading-deg>0.0</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+	<name>Lamp2</name>
+	<path>Patscherkofel_WallLamp3_5m.xml</path>
+		<offsets>
+			<x-m>-3.001</x-m>
+			<y-m>-24.5</y-m>
+			<z-m>-3.0</z-m>
+			<roll-deg>0.0</roll-deg>
+			<pitch-deg>0.0</pitch-deg>
+			<heading-deg>90.0</heading-deg>
+		</offsets>
+	</model>	
+
+	<model>
+	<name>Lamp3</name>
+	<path>Patscherkofel_WallLamp3_5m.xml</path>
+		<offsets>
+			<x-m>4.0</x-m>
+			<y-m>-23.18</y-m>
+			<z-m>-3.0</z-m>
+			<roll-deg>0.0</roll-deg>
+			<pitch-deg>0.0</pitch-deg>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+	</model>
+	
+<!-- Windows Lit -->
+	<animation>
+		<type>textranslate</type>
+		<object-name>windowslit</object-name>
+			<property>/sim/time/sun-angle-rad</property>
+			<step> 1.57 </step>
+			<factor>0.318471338</factor>
+			<center>
+				<x-m> 0 </x-m>
+				<y-m> 0 </y-m>
+				<z-m> 0 </z-m>
+			</center>
+			<axis>
+				<x> 0 </x>
+				<y>-1 </y>
+				<z> 0 </z>
+			</axis>
+	</animation>
+ 
+	<animation>
+		<type>material</type>
+		<object-name>windowslit</object-name>
+		<!-- <object-name>WallLamp</object-name> --> 
+			<condition>
+				<greater-than>
+					<property>/sim/time/sun-angle-rad</property>
+					<value>1.57</value>
+				</greater-than>
+			</condition>
+			<emission>
+				<red>   1 </red>
+				<green> 1 </green>
+				<blue>  1 </blue>
+			</emission>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>windowslit</object-name>
+		<!-- <object-name>WallLamp</object-name> -->
+			<condition>
+				<less-than-equals>
+					<property>/sim/time/sun-angle-rad</property>
+					<value>1.57</value>
+				</less-than-equals>
+			</condition>
+			<emission>
+				<red>   0.0 </red>
+				<green> 0.0 </green>
+				<blue>  0.0 </blue>
+			</emission>
+	</animation>
+	
+<!-- LOD Detail-->
+	<animation>
+		<type>range</type>
+		<object-name>Lamp1</object-name>
+		<object-name>Lamp2</object-name>
+		<object-name>Lamp3</object-name>
+		<min-m>0</min-m>
+		<max-m>1500</max-m>
+	</animation>
+	
+<!-- LOD -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>8000</max-m>
+	</animation>
+
+</PropertyList>

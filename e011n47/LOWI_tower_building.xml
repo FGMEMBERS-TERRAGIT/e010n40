@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <PropertyList>
 
@@ -48,18 +48,19 @@
 	</emission>
 </animation>
 
-    <model>
-	  <path>Models/Effects/RedLight10000.xml</path> 
-	  <offsets> 
-	     <x-m>14.66</x-m>
-	     <y-m>-0.77</y-m>
-	     <z-m>23.87</z-m>
-	     <heading-deg>0</heading-deg>
-	  </offsets>
-    </model>
+<!--
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path> 
+		<offsets> 
+			<x-m>14.66</x-m>
+			<y-m>-0.77</y-m>
+			<z-m>23.87</z-m>
+			<heading-deg>0</heading-deg>
+		</offsets>
+	</model>
 
     <model>
-	  <path>Models/Effects/RedLight10000.xml</path> 
+	  <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path> 
 	  <offsets> 
 	     <x-m>22.94</x-m>
 	     <y-m>-2.26</y-m>
@@ -69,7 +70,7 @@
     </model>
 
     <model>
-	  <path>Models/Effects/RedLight10000.xml</path> 
+	  <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path> 
 	  <offsets> 
 	     <x-m>24.68</x-m>
 	     <y-m>5.89</y-m>
@@ -79,7 +80,7 @@
     </model>
 
     <model>
-	  <path>Models/Effects/RedLight10000.xml</path> 
+	  <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path> 
 	  <offsets> 
 	     <x-m>16.47</x-m>
 	     <y-m>7.72</y-m>
@@ -97,6 +98,6 @@
 	     <heading-deg>0</heading-deg>
 	  </offsets>
     </model>
-
+-->
 </PropertyList>
 

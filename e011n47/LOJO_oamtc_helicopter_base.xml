@@ -1,0 +1,2307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<!-- LOJO OAMTC helibase at Innsbruck Airport                 -->
+	<!-- 2012.12.28 - V0.94 by Oliver Thurau & Heiko.H.Schulz     --> 
+	<!-- for Custom Scenery Innsbruck                             -->
+	<!-- exepet the van wich is from EPSC Scenery by Robert Leda* -->
+	
+    <path>LOJO_oamtc_helicopter_base.ac</path>
+	
+	<!-- nasal for the hangar door manual animation h3 h2 h1 sbh2 sbh1 & hangar - helipadlights-->
+	 <nasal>
+	  <load>
+	  print("loading doors");
+	   if (!contains(globals, "scenery")) globals["scenery"] = {};
+	   if (!contains(scenery, "LOWI")) scenery["LOWI"] = {};
+	   if (!contains(scenery.LOWI, "LOJO_oamtc_helicopter_base")) scenery.LOWI["LOJO_oamtc_helicopter_base"] = [nil];
+	   scenery.LOWI.LOJO_oamtc_helicopter_base[0] =
+		 { door :
+		   [aircraft.door.new("/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[0]", 3),
+			aircraft.door.new("/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[1]", 3),
+			aircraft.door.new("/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[2]", 3),
+			aircraft.door.new("/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]", 3),
+			aircraft.door.new("/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]", 3)
+			
+		   ]
+		 };
+		print("setting lights");
+		var omatcpadli = 121.875;
+		var oamtclon = 1.48;
+		
+		print("setting lights finished - use 121.875 Mhz on COM2 for LOJO - OAMTC main helipad lights");
+		var loop_id = 0;
+		
+		
+		var loop = func(id) {
+				id == loop_id or return;
+				var padradi = getprop("/instrumentation/comm[1]/frequencies/selected-mhz");
+				var oamtcsun = getprop("/sim/time/sun-angle-rad");
+					#print ("padradi  ", padradi);
+					#print ("oamtcsun  ", oamtcsun);
+					
+				if ((padradi == omatcpadli) and (oamtcsun > oamtclon)){		
+					setprop("/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[0]", 1);
+				}else {
+					setprop("/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[0]", 0);
+				};
+				
+				if (oamtcsun > oamtclon){		
+					setprop("/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[1]", 1);
+				}else {
+					setprop("/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[1]", 0);
+				};
+		
+		settimer(func { loop(id) }, 2);
+			}
+			loop(loop_id += 1);
+		
+		
+	  </load>
+	  
+	  <unload>loop_id += 1</unload>
+	  
+	 </nasal>
+
+<!-- Rembrandt -->
+<effect>
+	<inherits-from>Effects/model-transparent</inherits-from>
+	
+	<object-name>door_h3-1glass</object-name>
+	<object-name>door_h3-2glass</object-name>
+	<object-name>door_h3-3glass</object-name>
+	
+	<object-name>door_h2-1glass</object-name>
+	<object-name>door_h2-2glass</object-name>
+	<object-name>door_h2-3glass</object-name>
+	
+	<object-name>door_h1-1glass</object-name>
+	<object-name>door_h1-2glass</object-name>
+	<object-name>door_h1-3glass</object-name>
+	
+	<object-name>sbh-2-5glass</object-name>
+	<object-name>sbh-2-4glass</object-name>
+	<object-name>sbh-2-3glass</object-name>
+	
+	<object-name>sbh-1-5glass</object-name>
+	<object-name>sbh-1-4glass</object-name>
+	<object-name>sbh-1-3glass</object-name>
+	
+	<object-name>door_rightglass</object-name>
+	<object-name>door_leftglass</object-name>
+	
+	<object-name>win_01</object-name>
+	<object-name>win_02</object-name>
+	<object-name>win_03</object-name>
+	
+	<object-name>roofwindow_01glass</object-name>
+	<object-name>roofwindow_02glass</object-name>
+	<object-name>roofwindow_03glass</object-name>
+	<object-name>roofwindow_04glass</object-name>
+	<object-name>roofwindow_05glass</object-name>
+	
+	<!-- roof and normal windows are still missing - todo: needs model work -->
+</effect>
+
+<!-- REMBRANDT light -->
+
+	<!-- Floodlights outside -->
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<name>LightSource</name>
+		<object-name>LightVolume</object-name>
+		<position>
+			<x>-0.000</x>
+			<y> 0.000</y>
+			<z> 0.200</z>
+		</position>
+		<direction>
+			<x>-11.000</x>
+			<y>  0.000</y>
+			<z>-16.000</z>
+		</direction>
+		<ambient>
+			<r>0.5</r>
+			<g>0.5</g>
+			<b>0.5</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.6</r>
+			<g>0.505</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.6</r>
+			<g>0.6</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.0002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<exponent>8.0</exponent>
+		<cutoff>90</cutoff>
+		<near-m>1.0</near-m>
+		<far-m>300</far-m>
+	</animation>
+	
+	<!-- Floodlights inside test -->
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<name>LightSource_in01</name>
+		<object-name>LightVolume_in01</object-name>
+		<position>
+			<x>-7.980</x>
+			<y>10.088</y>
+			<z> 6.588</z>
+		</position>
+		<direction>
+			<x>  0.000</x>
+			<y>  0.000</y>
+			<z>-16.000</z>
+		</direction>
+		<ambient>
+			<r>0.5</r>
+			<g>0.5</g>
+			<b>0.5</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.6</r>
+			<g>0.505</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.6</r>
+			<g>0.6</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>1.5</c>
+			<l>0.0002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<exponent>4.0</exponent>
+		<cutoff>90</cutoff>
+		<near-m>1.0</near-m>
+		<far-m>20</far-m>
+	</animation>
+	
+	<animation>
+	<type>select</type>
+	<object-name>LightSource</object-name>
+	<object-name>LightSource_in01</object-name>
+		<condition>
+			<and>
+			<greater-than>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[1]</property>
+				<value>0.15</value>
+			</greater-than>
+			<property>/sim/rendering/rembrandt/enabled</property>
+			<greater-than>
+				<property>/sim/rendering/shaders/lights</property>
+				<value>0.0</value>
+			</greater-than>
+			</and>
+		</condition>
+	</animation>
+
+<!-- Light volume models - temp model -->
+
+	<!-- Hangar C1 - LIbelle Wall Flood Light Set -->
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m>-16.304 </x-m>
+			<y-m>  8.000 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m>-16.304 </x-m>
+			<y-m> 14.000 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m>-16.304 </x-m>
+			<y-m> 22.000 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m>-16.304 </x-m>
+			<y-m> 28.000 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<!-- Heliair Hangar C1 - Wall Flood Light Set -->
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m>  4.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m> 12.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m> 20.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m> 28.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m> 34.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOWI_FSZ_hangar_light.ac</path>
+		<offsets>
+			<x-m> 42.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+
+
+<!-- Door animations -->
+
+	<!-- DOOR H3 -->	
+	<!-- Hangar door groups - door h3 -->
+	<animation>
+		<name>H3-1</name>
+		<object-name>door_h3-1</object-name>
+		<object-name>door_h3-1glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>H3-2</name>
+		<object-name>door_h3-2</object-name>
+		<object-name>door_h3-2glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>H3-3</name>
+		<object-name>door_h3-3</object-name>
+		<object-name>door_h3-3glass</object-name>
+	</animation>
+	
+	<!-- set the pick objects to activate movement - door h3 -->
+	<animation>
+	<type>pick</type>
+		<object-name>H3-1</object-name>
+		<object-name>H3-2</object-name>
+		<object-name>H3-3</object-name>
+		
+	<visible>true</visible>
+	<action>
+		<name>click</name>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>scenery.LOWI.LOJO_oamtc_helicopter_base[0].door[0].toggle();</script>
+		</binding>
+	</action>
+	</animation>
+
+	<!-- move door h3 -->
+	<animation>
+		<type>translate</type>
+		<object-name>H3-1</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[0]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep>  4.00 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>H3-2</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[0]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep>  8.00 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>H3-3</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[0]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep> 12.00 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+	</animation>
+	
+	<!-- DOOR H2 -->	
+	<!-- Hangar door groups - door h2 -->
+	<animation>
+		<name>H2-1</name>
+		<object-name>door_h2-1</object-name>
+		<object-name>door_h2-1glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>H2-2</name>
+		<object-name>door_h2-2</object-name>
+		<object-name>door_h2-2glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>H2-3</name>
+		<object-name>door_h2-3</object-name>
+		<object-name>door_h2-3glass</object-name>
+	</animation>
+	
+	<!-- set the pick objects to activate movement - door h2 -->
+	<animation>
+	<type>pick</type>
+		<object-name>H2-1</object-name>
+		<object-name>H2-2</object-name>
+		<object-name>H2-3</object-name>
+		
+	<visible>true</visible>
+	<action>
+		<name>click</name>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>scenery.LOWI.LOJO_oamtc_helicopter_base[0].door[1].toggle();</script>
+		</binding>
+	</action>
+	</animation>
+
+	<!-- move door h2 -->
+	<animation>
+		<type>translate</type>
+		<object-name>H2-1</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[1]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep> -4.00 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>H2-2</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[1]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep> -8.00 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>H2-3</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[1]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep>-12.00 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+	</animation>
+	
+	<!-- DOOR H1 -->
+	<!-- Hangar door groups - door h1 -->
+	<animation>
+		<name>H1-1</name>
+		<object-name>door_h1-1</object-name>
+		<object-name>door_h1-1glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>H1-2</name>
+		<object-name>door_h1-2</object-name>
+		<object-name>door_h1-2glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>H1-3</name>
+		<object-name>door_h1-3</object-name>
+		<object-name>door_h1-3glass</object-name>
+	</animation>
+	
+	<!-- set the pick objects to activate movement - door h1 -->
+	<animation>
+	<type>pick</type>
+		<object-name>H1-1</object-name>
+		<object-name>H1-2</object-name>
+		<object-name>H1-3</object-name>
+		
+	<visible>true</visible>
+	<action>
+		<name>click</name>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>scenery.LOWI.LOJO_oamtc_helicopter_base[0].door[2].toggle();</script>
+		</binding>
+	</action>
+	</animation>
+
+	<!-- move door h1 -->
+	<animation>
+		<type>translate</type>
+		<object-name>H1-1</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[2]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep>  4.00 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>H1-2</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[2]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep>  8.00 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>H1-3</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[2]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep> 12.00 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>1</x>
+				<y>0</y>
+				<z>0</z>
+			</axis>
+	</animation>
+	
+	<!-- DOOR SBH2 -->
+	<!-- Hangar door groups - door sbh-2 -->
+	<animation>
+		<name>SBH2-5</name>
+		<object-name>sbh-2-5</object-name>
+		<object-name>sbh-2-5glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>SBH2-4</name>
+		<object-name>sbh-2-4</object-name>
+		<object-name>sbh-2-4glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>SBH2-3</name>
+		<object-name>sbh-2-3</object-name>
+		<object-name>sbh-2-3glass</object-name>
+	</animation>
+	
+	<!-- set the pick objects to activate movement - door sbh-2 -->
+	<animation>
+	<type>pick</type>
+		<object-name>sbh-2-7</object-name>
+		<object-name>sbh-2-6</object-name>
+		<object-name>SBH2-5</object-name>
+		<object-name>SBH2-4</object-name>
+		<object-name>SBH2-3</object-name>
+		<object-name>sbh-2-2</object-name>
+		<object-name>sbh-2-1</object-name>
+		
+	<visible>true</visible>
+	<action>
+		<name>click</name>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>scenery.LOWI.LOJO_oamtc_helicopter_base[0].door[3].toggle();</script>
+		</binding>
+	</action>
+	</animation>
+
+	<!-- move door sbh-2 up and in -->
+	<animation>
+		<type>translate</type>
+		<object-name>sbh-2-7</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.1428571 </ind><dep>  0.716 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>sbh-2-7</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  5.000 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>sbh-2-7</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.1428571 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  19.125 </y1-m>
+							<z1-m>  4.643 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  30.875 </y2-m>
+							<z2-m>  4.643 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>sbh-2-6</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.2857142 </ind><dep>  1.430 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>sbh-2-6</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.1428571 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  4.287 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>sbh-2-6</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.1428571 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.2857142 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  19.125 </y1-m>
+							<z1-m>  3.929 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  30.875 </y2-m>
+							<z2-m>  3.929 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>SBH2-5</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.4285713 </ind><dep>  2.144 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>SBH2-5</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.2857142 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  3.572 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>SBH2-5</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.2857142 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.4285713 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  19.125 </y1-m>
+							<z1-m>  3.214 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  30.875 </y2-m>
+							<z2-m>  3.214 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>SBH2-4</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.5714284 </ind><dep>  2.858 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>SBH2-4</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.4285713 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  2.858 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>SBH2-4</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.4285713 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.5714284 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  19.125 </y1-m>
+							<z1-m>  2.500 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  30.875 </y2-m>
+							<z2-m>  2.500 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>SBH2-3</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.7142855 </ind><dep>  3.572 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>SBH2-3</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.5714284 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  2.144 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>SBH2-3</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.5714284 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.7142855 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  19.125 </y1-m>
+							<z1-m>  1.786 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  30.875 </y2-m>
+							<z2-m>  1.786 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>sbh-2-2</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.8571426 </ind><dep>  4.287 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>sbh-2-2</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.7142855 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  1.430 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>sbh-2-2</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.7142855 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.8571426 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  19.125 </y1-m>
+							<z1-m>  1.072 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  30.875 </y2-m>
+							<z2-m>  1.072 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>sbh-2-1</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep>  5.000 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>sbh-2-1</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.8571426 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  0.716 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>sbh-2-1</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[3]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.8571426 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  19.125 </y1-m>
+							<z1-m>  0.357 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  30.875 </y2-m>
+							<z2-m>  0.357 </z2-m>
+						</axis>
+					</animation>
+	
+	
+	<!-- DOOR SBH1 -->
+	<!-- Hangar door groups - door sbh-1 -->
+	<animation>
+		<name>SBH1-5</name>
+		<object-name>sbh-1-5</object-name>
+		<object-name>sbh-1-5glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>SBH1-4</name>
+		<object-name>sbh-1-4</object-name>
+		<object-name>sbh-1-4glass</object-name>
+	</animation>
+	
+	<animation>
+		<name>SBH1-3</name>
+		<object-name>sbh-1-3</object-name>
+		<object-name>sbh-1-3glass</object-name>
+	</animation>
+	
+	<!-- set the pick objects to activate movement - door sbh-2 -->
+	<animation>
+	<type>pick</type>
+		<object-name>sbh-1-7</object-name>
+		<object-name>sbh-1-6</object-name>
+		<object-name>SBH1-5</object-name>
+		<object-name>SBH1-4</object-name>
+		<object-name>SBH1-3</object-name>
+		<object-name>sbh-1-2</object-name>
+		<object-name>sbh-1-1</object-name>
+		
+	<visible>true</visible>
+	<action>
+		<name>click</name>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>scenery.LOWI.LOJO_oamtc_helicopter_base[0].door[4].toggle();</script>
+		</binding>
+	</action>
+	</animation>
+	
+	<!-- move door sbh-1 up and in -->
+	<animation>
+		<type>translate</type>
+		<object-name>sbh-1-7</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.1428571 </ind><dep>  0.716 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>sbh-1-7</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  5.000 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>sbh-1-7</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.1428571 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  5.125 </y1-m>
+							<z1-m>  4.643 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  16.875 </y2-m>
+							<z2-m>  4.643 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>sbh-1-6</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.2857142 </ind><dep>  1.430 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>sbh-1-6</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.1428571 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  4.287 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>sbh-1-6</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.1428571 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.2857142 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  5.125 </y1-m>
+							<z1-m>  3.929 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  16.875 </y2-m>
+							<z2-m>  3.929 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>SBH1-5</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.4285713 </ind><dep>  2.144 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>SBH1-5</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.2857142 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  3.572 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>SBH1-5</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.2857142 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.4285713 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  5.125 </y1-m>
+							<z1-m>  3.214 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  16.875 </y2-m>
+							<z2-m>  3.214 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>SBH1-4</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.5714284 </ind><dep>  2.858 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>SBH1-4</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.4285713 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  2.858 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>SBH1-4</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.4285713 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.5714284 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  5.125 </y1-m>
+							<z1-m>  2.500 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  16.875 </y2-m>
+							<z2-m>  2.500 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>SBH1-3</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.7142855 </ind><dep>  3.572 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>SBH1-3</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.5714284 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  2.144 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>SBH1-3</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.5714284 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.7142855 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  5.125 </y1-m>
+							<z1-m>  1.786 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  16.875 </y2-m>
+							<z2-m>  1.786 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>sbh-1-2</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 0.8571426 </ind><dep>  4.287 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>sbh-1-2</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.7142855 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  1.430 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>sbh-1-2</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.7142855 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 0.8571426 </ind><dep>  90.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  5.125 </y1-m>
+							<z1-m>  1.072 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  16.875 </y2-m>
+							<z2-m>  1.072 </z2-m>
+						</axis>
+					</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>sbh-1-1</object-name>
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+			<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+				<entry><ind> 1.0 </ind><dep>  5.000 </dep></entry>
+			</interpolation>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+	</animation>
+			<animation>
+			<type>translate</type>
+			<object-name>sbh-1-1</object-name>
+				<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+				<factor>1</factor>
+				<interpolation>
+					<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+					<entry><ind> 0.8571426 </ind><dep>  0.0 </dep></entry>
+					<entry><ind> 1.0 </ind><dep>  0.716 </dep></entry>
+				</interpolation>
+				<axis>
+					<x>1</x>
+					<y>0</y>
+					<z>0</z>
+				</axis>
+			</animation>
+					<animation>
+					<type>rotate</type>
+					<object-name>sbh-1-1</object-name>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/door[4]/position-norm</property>
+						<factor>1</factor>
+						<interpolation>
+							<entry><ind> 0.0 </ind><dep>  0.00 </dep></entry>
+							<entry><ind> 0.8571426 </ind><dep>  0.0 </dep></entry>
+							<entry><ind> 1.0 </ind><dep>  90.0 </dep></entry>
+						</interpolation>
+						<axis>
+							<x1-m> -15.841 </x1-m>
+							<y1-m>  5.125 </y1-m>
+							<z1-m>  0.357 </z1-m>
+							<x2-m> -15.841 </x2-m>
+							<y2-m>  16.875 </y2-m>
+							<z2-m>  0.357 </z2-m>
+						</axis>
+					</animation>
+
+
+<!-- Add-on Model placement -->
+
+<!-- Windsock on the c1 hangar building offset heding old200deg - 201.2 to compensate for heliport model rotation -->
+	<model>
+	<path>LOJO_oamtc_windsock_lit.xml</path>
+		<offsets>
+			<x-m> 10.000 </x-m>
+			<y-m> -0.200 </y-m>
+			<z-m>  6.000 </z-m>
+			<pitch-deg> 00.00</pitch-deg>
+			<heading-deg>201.2 </heading-deg>
+		</offsets>
+	</model>
+	
+	
+<!-- Obstruction Position Lights -->
+	<!-- sb1 - c1 right -->
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m>-15.660 </x-m>
+      <y-m>  2.340 </y-m>
+      <z-m>  7.240 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m>  0.040 </x-m>
+      <y-m>  0.340 </y-m>
+      <z-m>  7.240 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- sb1 - windsock light-->
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m> 10.000 </x-m>
+      <y-m> -0.200 </y-m>
+      <z-m> 16.120 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- sb2 - Libelle left -->
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m>-15.660 </x-m>
+      <y-m> 35.660 </y-m>
+      <z-m>  7.240 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m> -0.340 </x-m>
+      <y-m> 35.660 </y-m>
+      <z-m>  7.240 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- sb2 - right antenna light-->
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m>-15.700 </x-m>
+      <y-m> 36.040 </y-m>
+      <z-m>  9.770 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m> -0.300 </x-m>
+      <y-m> 36.040 </y-m>
+      <z-m> 11.870 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- w1-3 Hangar -->
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m> 16.340 </x-m>
+      <y-m>  0.340 </y-m>
+      <z-m>  9.240 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m> 49.960 </x-m>
+      <y-m>  0.340 </y-m>
+      <z-m>  9.240 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m> 16.340 </x-m>
+      <y-m> 26.660 </y-m>
+      <z-m>  9.240 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <offsets>
+      <x-m> 49.960 </x-m>
+      <y-m> 26.660 </y-m>
+      <z-m>  9.240 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- Office -->
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+		<offsets>
+			<x-m> 59.660 </x-m>
+			<y-m>  0.340 </y-m>
+			<z-m>  9.240 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+		<offsets>
+			<x-m> 50.340 </x-m>
+			<y-m> 37.660 </y-m>
+			<z-m>  9.240 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+		<offsets>
+			<x-m> 59.660 </x-m>
+			<y-m> 37.660 </y-m>
+			<z-m>  9.240 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+		<offsets>
+			<x-m> 67.660 </x-m>
+			<y-m> 18.190 </y-m>
+			<z-m>  9.240 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
+		<offsets>
+			<x-m> 67.660 </x-m>
+			<y-m>  7.340 </y-m>
+			<z-m>  9.240 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.0 </heading-deg>
+		</offsets>
+	</model>
+
+<!-- Wall Flood Lights-->
+
+	<!-- Hangar C1 - LIbelle Wall Flood Light Set -->
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m>-16.304 </x-m>
+			<y-m>  8.000 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m>-16.304 </x-m>
+			<y-m> 14.000 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m>-16.304 </x-m>
+			<y-m> 22.000 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m>-16.304 </x-m>
+			<y-m> 28.000 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<!-- Heliair Hangar C1 - Wall Flood Light Set -->
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m>  4.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m> 12.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m> 20.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m> 28.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m> 34.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_wall_floodlight.ac</path>
+		<offsets>
+			<x-m> 42.000 </x-m>
+			<y-m> 27.307 </y-m>
+			<z-m>  6.680 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>270.00 </heading-deg>
+		</offsets>
+	</model>
+	
+<!-- Main Helipad - now replaced by separate model, refule station integrated in main model -->
+
+	<!-- Main Helipad & Helipad Flood Light Set 
+	<model>
+    <path>LOJO_oamtc_main_helipad.xml</path>
+    <offsets>
+      <x-m>-58.374 </x-m>
+      <y-m>  4.946 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>295.00 </heading-deg>
+    </offsets>
+	</model>-->
+	
+<!-- C1 Refule Station 
+	<model>
+    <path>LOJO_oamtc_refule_station.xml</path>
+    <offsets>
+      <x-m>-21.352 </x-m>
+      <y-m> 18.000 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.00 </heading-deg>
+    </offsets>
+	</model>-->
+	
+<!-- Libelle Refule Station 
+	<model>
+    <path>LOJO_oamtc_refule_station.xml</path>
+    <offsets>
+      <x-m>-21.352 </x-m>
+      <y-m> 32.000 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.00 </heading-deg>
+    </offsets>
+	</model>-->
+	
+	
+<!-- Light Poles - Parking Space 
+	<model>
+	<path>LOJO_oamtc_Streetlamp.ac</path>
+		<offsets>
+			<x-m> 62.000 </x-m>
+			<y-m> -6.600 </y-m>
+			<z-m> -0.200 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>90.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_Streetlamp.ac</path>
+		<offsets>
+			<x-m> 80.000 </x-m>
+			<y-m> -6.800 </y-m>
+			<z-m> -0.200 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>90.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_Streetlamp.ac</path>
+		<offsets>
+			<x-m> 98.480 </x-m>
+			<y-m> -5.731 </y-m>
+			<z-m> -0.200 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>155.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_oamtc_Streetlamp.ac</path>
+		<offsets>
+			<x-m> 82.950 </x-m>
+			<y-m> 23.528 </y-m>
+			<z-m> -0.200 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>212.50 </heading-deg>
+		</offsets>
+	</model>-->
+	
+<!-- Parked Cars -->
+	<model>
+	<path>LOJO_van_silver.xml</path>
+		<offsets>
+			<x-m> 65.000 </x-m>
+			<y-m>  5.000 </y-m>
+			<z-m>  0.000 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>0.00 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_van_silver.xml</path>
+		<offsets>
+			<x-m> 80.000 </x-m>
+			<y-m> -3.400 </y-m>
+			<z-m>  0.000 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>112.5 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+	<path>LOJO_van_silver_glass.xml</path>
+		<offsets>
+			<x-m> 84.000 </x-m>
+			<y-m> -3.500 </y-m>
+			<z-m>  0.000 </z-m>
+			<pitch-deg> 0.00</pitch-deg>
+			<heading-deg>112.5 </heading-deg>
+		</offsets>
+	</model>
+	
+<!-- C1 Hangar Internal Addons -->
+	<!-- 911 rescue pinball -->
+	<model>
+    <path>LOJO_oamtc_911_rescue.xml</path>
+    <offsets>
+      <x-m> -8.000 </x-m>
+      <y-m> 17.200 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>270.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- Race pinball - for now just 911 rescue pinball 2 -->
+	<model>
+    <path>LOJO_oamtc_911_rescue.xml</path>
+    <offsets>
+      <x-m> -9.500 </x-m>
+      <y-m> 17.200 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>270.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- Spind c1 blue -->
+	<model>
+    <path>LOJO_oamtc_c1_spind.xml</path>
+    <offsets>
+      <x-m> -1.431 </x-m>
+      <y-m> 17.376 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- Spind c1 blue -->
+	<model>
+    <path>LOJO_oamtc_c1_spind.xml</path>
+    <offsets>
+      <x-m> -3.642 </x-m>
+      <y-m> 17.376 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- Spind c1 blue -->
+	<model>
+    <path>LOJO_oamtc_c1_spind.xml</path>
+    <offsets>
+      <x-m> -5.856 </x-m>
+      <y-m> 17.376 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- Spind c1 libelle blue -->
+	<model>
+    <path>LOJO_oamtc_c1_spind.xml</path>
+    <offsets>
+      <x-m> -3.642 </x-m>
+      <y-m> 32.039 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- Spind c1 libelle blue -->
+	<model>
+    <path>LOJO_oamtc_c1_spind.xml</path>
+    <offsets>
+      <x-m> -5.856 </x-m>
+      <y-m> 32.039 </y-m>
+      <z-m>  0.000 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- Maintenace Hangar Internal Addons -->
+	<!-- Toolcar Heliair -->
+	<model>
+    <path>LOJO_oamtc_toolcar_heliair.xml</path>
+    <offsets>
+      <x-m> 31.000 </x-m>
+      <y-m> 19.500 </y-m>
+      <z-m>  0.020 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- Toolcar Heliair -->
+	<model>
+    <path>LOJO_oamtc_toolcar_heliair.xml</path>
+    <offsets>
+      <x-m> 31.000 </x-m>
+      <y-m> 18.700 </y-m>
+      <z-m>  0.020 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+
+	
+<!-- NIGHT Texture Animations & illuminate -->
+
+	<!-- Obstruction lamp glass illumination -->
+	<animation>
+		<type>material</type> 
+		<object-name>osbt_lamp_glass</object-name>
+		<condition>
+			<or>
+				<greater-than>
+					<property>/sim/time/sun-angle-rad</property>
+					<value>1.57</value>
+				</greater-than>
+				<less-than>
+					<property>environment/visibility-m</property>
+					<value>4500.00</value>
+				</less-than>
+			</or>
+		</condition>
+		<emission>	
+			<red>0.8</red>	
+			<green>0.8</green>	
+			<blue>0.8</blue>
+		</emission>
+	</animation>
+	
+	<!-- Animation for outdoor floodlight hangar Libelle + C1 -->
+	<!-- add to radio control -->
+	<animation>
+		<type>select</type> 
+		<object-name>out_fl_light_01</object-name>
+		<object-name>out_fl_light_02</object-name>
+		<object-name>indoor_concrete_light</object-name>
+			<condition>
+				<and>
+					<equals>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[1]</property>
+						<value>1</value>
+					</equals>
+					<not>
+					<property>/sim/rendering/rembrandt/enabled</property>
+					</not>
+				</and>
+			</condition>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>out_fl_light_01</object-name>
+		<object-name>out_fl_light_02</object-name>
+			<emission>
+				<red>0.8</red>
+				<green>0.8</green>
+				<blue>0.8</blue>
+				<factor-prop>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[1]</factor-prop>
+			</emission>
+	</animation>
+	
+		<!-- Texture illuminate for wall Flood light housing -->
+		<animation>
+		<type>material</type>
+		<object-name>wall_lite_01in</object-name>
+			<emission>
+				<red>1.0</red>
+				<green>1.0</green>
+				<blue>1.0</blue>
+				<factor-prop>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[1]</factor-prop>
+			</emission>
+		</animation>
+
+	<!-- Animation for car parking light poles 
+	<animation>
+		<type>material</type>
+		<object-name>Bulb</object-name>
+		<condition>
+			<greater-than>
+				<property>/sim/time/sun-angle-rad</property>
+				<value>1.57</value>
+			</greater-than>
+		</condition>
+		<emission>
+			<red>  1.0</red>
+			<green>0.8</green>
+			<blue> 0.1</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Bulb</object-name>
+		<condition>
+			<less-than-equals>
+				<property>/sim/time/sun-angle-rad</property>
+				<value>1.57</value>
+			</less-than-equals>
+		</condition>
+		<emission>
+			<red>  0.0</red>
+			<green>0.0</green>
+			<blue> 0.0</blue>
+		</emission>
+	</animation>
+	-->
+	
+	<!-- Indoor Light Group -->
+	<animation>
+		<name>nightillu_indoor</name>
+		<object-name>indoor_concrete_light</object-name>
+		<object-name>inwall</object-name>
+		<object-name>sb_office_inwall</object-name>
+		<object-name>rbeam_02</object-name>
+		<object-name>rbeam_04</object-name>
+		<object-name>rbeam_07</object-name>
+		<object-name>h_pole_01</object-name>
+		<object-name>h_pole_02</object-name>
+		<object-name>h_pole_03</object-name>
+		<object-name>h2_firebox</object-name>
+		<object-name>int_wall_01</object-name>
+		<object-name>int_wall_02</object-name>
+		<object-name>int_wall_03</object-name>
+		<object-name>int_wall_04</object-name>
+		<object-name>int_wall_sb1</object-name>
+		<object-name>int_wall_sb2</object-name>
+		<object-name>sb2_rail</object-name>
+		<object-name>c1_indoor_01</object-name>
+		<object-name>c1_indoor_02</object-name>
+		<object-name>sb_doorframe</object-name>
+		<object-name>sb1_crane_01</object-name>
+		<object-name>sb1_crane_03</object-name>
+		<object-name>sb2_crane_01</object-name>
+		<object-name>rbeam_crane</object-name>
+		<object-name>main_crane_01</object-name>
+		<object-name>catwalk_01</object-name>
+		<object-name>catwalk_02</object-name>
+		<object-name>catwalk_03</object-name>
+		<object-name>fexit_01</object-name>
+		<object-name>fexit_02</object-name>
+		<object-name>fexit_03</object-name>
+		<object-name>fexit_04</object-name>
+		<object-name>fexit_05</object-name>
+		<object-name>fexit_06</object-name>
+		<object-name>fexit_07</object-name>
+		<object-name>fexit_08</object-name>
+		<object-name>fexit_09</object-name>
+		<object-name>int_door_01</object-name>
+		<object-name>int_door_01box</object-name>
+		<object-name>int_door_02</object-name>
+		<object-name>int_door_02box</object-name>
+		<object-name>int_door_03</object-name>
+		<object-name>int_door_04</object-name>
+		<object-name>int_door_05</object-name>
+		<object-name>int_door_06</object-name>
+		<object-name>int_door_07</object-name>
+		<object-name>int_door_08</object-name>
+		<object-name>int_door_09</object-name>
+		<object-name>int_door_10</object-name>
+		<object-name>int_door_11</object-name>
+		<object-name>int_door_12</object-name>
+		<object-name>int_door_13</object-name>
+		<object-name>int_door_14</object-name>
+		<object-name>int_door_15</object-name>
+		<object-name>int_door_16</object-name>
+		<object-name>int_door_17</object-name>
+		<object-name>int_door_18</object-name>
+		<object-name>int_door_19</object-name>
+		<object-name>int_door_20</object-name>
+		<object-name>c1_spind</object-name>
+		<object-name>911_rescue</object-name>
+		<object-name>toolcar_heliair</object-name>
+	</animation>
+	
+	<!-- Texture illuminate for all indoor textures -->
+	<animation>
+		<type>material</type> 
+		<object-name>nightillu_indoor</object-name>
+			<condition>
+				<and>
+					<equals>
+						<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[1]</property>
+						<value>1</value>
+					</equals>
+					<not>
+					<property>/sim/rendering/rembrandt/enabled</property>
+					</not>
+				</and>
+			</condition>
+			<emission>	
+				<red>0.7</red>	
+				<green>0.7</green>	
+				<blue>0.7</blue>
+				<factor-prop>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[1]</factor-prop>
+			</emission>
+	</animation>
+	
+	<!-- Office night window illumination -->
+	<animation>
+		<type>material</type> 
+		<object-name>oamtc_main_office</object-name>
+			<condition>
+				<and>
+					<greater-than>		
+						<property>/sim/time/sun-angle-rad</property>
+						<value>1.57</value>
+					</greater-than>
+					<not>
+						<property>/sim/rendering/rembrandt/enabled</property>
+					</not>
+				</and>
+			</condition>
+			<emission>
+				<red>0.7</red>
+				<green>0.6</green>
+				<blue>0.4</blue>
+			</emission>
+	</animation>
+	
+	<!-- Summer / Winter selection -->
+	<animation>
+	<type>select</type>
+		<!--<object-name>snow_ground</object-name>-->
+		<object-name>snow_roof_01</object-name>
+		<object-name>snow_roof_02</object-name>
+		<object-name>snow_roof_03</object-name>
+			<condition>
+				<equals>
+					<property>sim/startup/season</property>
+					<value>winter</value>
+				</equals>
+			</condition>
+	</animation>
+	
+	<animation>
+		<!--<object-name>snow_ground</object-name>-->
+		<object-name>snow_roof_01</object-name>
+		<object-name>snow_roof_02</object-name>
+		<object-name>snow_roof_03</object-name>
+		<enable-hot type="bool">false</enable-hot>
+	</animation>
+
+	
+	<!--preventing crashing on the doors and interior roof parts-->
+	<animation>
+		<object-name>rbeam_01</object-name>
+		<object-name>rbeam_02</object-name>
+		<object-name>rbeam_03</object-name>
+		<object-name>rbeam_04</object-name>
+		<object-name>rbeam_05</object-name>
+		<object-name>rbeam_06</object-name>
+		<object-name>rbeam_07</object-name>
+		
+		<object-name>rbeam_crane</object-name>
+		<object-name>main_crane_01</object-name>
+		
+		<object-name>sb1_crane_01</object-name>
+		<object-name>sb1_crane_03</object-name>
+		
+		<object-name>sb2_crane_01</object-name>
+		
+		<object-name>sb_doorframe</object-name>
+		<object-name>oamtc-door-sign</object-name>
+		
+		<object-name>door_h1-1</object-name>
+		<object-name>door_h1-2</object-name>
+		<object-name>door_h1-3</object-name>
+		<object-name>door_h1-1glass</object-name>
+		<object-name>door_h1-2glass</object-name>
+		<object-name>door_h1-3glass</object-name>
+		
+		<object-name>door_h2-1</object-name>
+		<object-name>door_h2-2</object-name>
+		<object-name>door_h2-3</object-name>
+		<object-name>door_h2-1glass</object-name>
+		<object-name>door_h2-2glass</object-name>
+		<object-name>door_h2-3glass</object-name>
+		
+		<object-name>door_h3-1</object-name>
+		<object-name>door_h3-2</object-name>
+		<object-name>door_h3-3</object-name>
+		<object-name>door_h3-1glass</object-name>
+		<object-name>door_h3-2glass</object-name>
+		<object-name>door_h3-3glass</object-name>
+		
+		<object-name>hd_frame_01</object-name>
+		<object-name>hd_frame_04</object-name>
+	
+		<object-name>sbh-1-7</object-name>
+		<object-name>sbh-1-6</object-name>
+		<object-name>sbh-1-5</object-name>
+		<object-name>sbh-1-4</object-name>
+		<object-name>sbh-1-3</object-name>
+		<object-name>sbh-1-2</object-name>
+		<object-name>sbh-1-1</object-name>
+		<object-name>sbh-1-3glass</object-name>
+		<object-name>sbh-1-4glass</object-name>
+		<object-name>sbh-1-5glass</object-name>
+		 
+		<object-name>sbh-2-7</object-name>
+		<object-name>sbh-2-6</object-name>
+		<object-name>sbh-2-5</object-name>
+		<object-name>sbh-2-4</object-name>
+		<object-name>sbh-2-3</object-name>
+		<object-name>sbh-2-2</object-name>
+		<object-name>sbh-2-1</object-name>
+		<object-name>sbh-2-3glass</object-name>
+		<object-name>sbh-2-4glass</object-name>
+		<object-name>sbh-2-5glass</object-name>
+		<object-name>oamt-outwall</object-name>
+		<object-name>inwall.001</object-name>
+		<object-name>inwall</object-name>
+		
+		<object-name>out_fl_light_01</object-name>
+		<object-name>out_fl_light_02</object-name>
+		<object-name>indoor_concrete_light</object-name>
+		
+			<enable-hot type="bool">false</enable-hot>
+	</animation>	
+	
+	<!--preventing crashing on the ouside roof parts on SIM startup for helipad positions-->	
+	<animation>
+		<type>translate</type>
+			<object-name>Roof</object-name>
+			<object-name>snow_roof_01</object-name>
+			<object-name>roofwindow_05glass</object-name>
+			<object-name>roofwindow_05</object-name>
+			<object-name>roofwindow_04glass</object-name>
+			<object-name>roofwindow_04</object-name>
+			<object-name>roofwindow_03glass</object-name>
+			<object-name>roofwindow_03</object-name>
+			<object-name>roofwindow_02glass</object-name>
+			<object-name>roofwindow_02</object-name>
+			<object-name>roofwindow_01glass</object-name>
+			<object-name>roofwindow_01</object-name>
+		<condition>
+			<greater-than>
+				<property>/sim/time/elapsed-sec</property>
+				<value>5</value>
+			</greater-than>
+		</condition>
+		<property>/sim/signals/fdm-initialized</property>
+		<factor>34</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	
+	<!-- LOD -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>10000</max-m>
+	</animation>
+
+</PropertyList>
+

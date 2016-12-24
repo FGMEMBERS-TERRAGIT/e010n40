@@ -3,6 +3,13 @@
        
 <path>LOWI_hangar_n2.ac</path>
 
+<!-- Rembrandt -->
+<effect>
+	<inherits-from>Effects/model-transparent</inherits-from>
+	<object-name>hangar_02_glass_1</object-name>
+	<object-name>hangar_02_glass_2</object-name>
+</effect>
+
 <!-- REMBRAND light -->
 	<animation>
 		<type>light</type>
@@ -67,7 +74,7 @@
 	</animation>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> 1.600 </x-m>
       <y-m> 41.800 </y-m>
@@ -78,7 +85,7 @@
 </model>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> 68.400 </x-m>
       <y-m> 41.800 </y-m>
@@ -89,7 +96,7 @@
 </model>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> 1.600 </x-m>
       <y-m> 8.200 </y-m>
@@ -100,7 +107,7 @@
 </model>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> 68.400 </x-m>
       <y-m> 8.200 </y-m>
@@ -110,7 +117,7 @@
     </offsets>
 </model>
 
-<!-- Ramp light models -->
+<!-- Ramp light models - incl. rembrand cone-->
 <model>
     <path>LOWI_light_post_wall.ac</path>
     <offsets>
@@ -162,23 +169,6 @@
 	</emission>
 </animation>
 
-<!-- Office night window illumination -->
-<animation>
-	<type>material</type> 
-	<object-name>lowi_h2_ol_01</object-name>
-	<condition>		
-		<greater-than>		
-			<property>/sim/time/sun-angle-rad</property>
-			<value>1.57</value>
-		</greater-than>
-	</condition>
-	<emission>	
-		<red>0.7</red>	
-		<green>0.6</green>	
-		<blue>0.4</blue>
-	</emission>
-</animation>
-
 <!-- Obstruction lamp glass illumination -->
 <animation>
 	<type>material</type> 
@@ -200,18 +190,6 @@
 		<green>0.8</green>	
 		<blue>0.8</blue>
 	</emission>
-</animation>
-
-<!-- dont show the light model during day-->
-<animation>
-	<type>select</type> 
-	<object-name>lowi_h2_ol_01</object-name>
-	<condition>		
-	<greater-than>		
-	<property>/sim/time/sun-angle-rad</property>
-	<value>1.57</value>
-	</greater-than>
-	</condition>
 </animation>
 
 <!-- LOD -->

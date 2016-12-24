@@ -1,0 +1,1467 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+<path>Patscherkofel_Sessel1.ac</path>
+
+<!-- Winter Ground -->
+	<animation>
+		<type>textranslate</type>
+		<object-name>ground</object-name>
+			<condition>
+				<equals>
+					<property>sim/startup/season</property>
+					<value>winter</value>
+				</equals>
+			</condition>
+			<offset>0.50</offset>
+			<center>
+				<x-m> 0 </x-m>
+				<y-m> 0 </y-m>
+				<z-m> 0 </z-m>
+			</center>
+			<axis> 
+				<x> 0 </x>
+				<y> -1 </y>
+				<z>  0 </z>
+			</axis>
+	</animation>
+	
+<!-- Windows Lit -->
+	<animation> 
+		<type>textranslate</type> 
+		<object-name>windowslit</object-name>
+			<property>/sim/time/sun-angle-rad</property>
+			<step> 1.57 </step>
+			<factor>0.318471338</factor>
+			<center>
+				<x-m> 0 </x-m>
+				<y-m> 0 </y-m>
+				<z-m> 0 </z-m>
+			</center>
+			<axis>
+				<x> 0 </x>
+				<y> -1 </y>
+				<z>  0 </z>
+			</axis>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>windowslit</object-name>
+			<condition>
+				<greater-than>
+					<property>/sim/time/sun-angle-rad</property>
+					<value>1.57</value>
+				</greater-than>
+			</condition>
+			<emission>
+				<red>   1 </red>
+				<green> 1 </green>
+				<blue>  1 </blue>
+			</emission>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>windowslit</object-name>
+			<condition>
+				<less-than-equals>
+					<property>/sim/time/sun-angle-rad</property>
+					<value>1.57</value>
+				</less-than-equals>
+			</condition>
+			<emission>
+				<red>   0.0 </red>
+				<green> 0.0 </green>
+				<blue>  0.0 </blue>
+			</emission>
+	</animation>
+
+  
+<!-- MODELS -->
+<!-- Downhill station not anymore used, but left for reference !!!
+	<model>
+		<name>DwnStn</name>
+		<path>Patscherkofel_Sessel2.xml</path>
+			<offsets>
+				<x-m> 0.0 </x-m>
+				<y-m> -660.0 </y-m>
+				<z-m> -267.45 </z-m>
+				<roll-deg> 0.0 </roll-deg>
+				<pitch-deg>0.0 </pitch-deg>
+				<heading-deg>0.0 </heading-deg>
+			</offsets>
+	</model>
+-->
+
+<!-- LAPMS -->
+	<model>
+		<name>Lamp1</name>
+		<path>Patscherkofel_WallLamp3_5m.xml</path>
+			<offsets>
+				<x-m>0.0</x-m>
+				<y-m>0.305</y-m>
+				<z-m>6.0</z-m>
+				<roll-deg>0.0</roll-deg>
+				<pitch-deg>0.0</pitch-deg>
+				<heading-deg>180.0</heading-deg>
+			</offsets>
+	</model>
+	
+	<model>
+		<name>Lamp2</name>
+		<path>Patscherkofel_WallLamp3_5m.xml</path>
+			<offsets>
+				<x-m>7.778</x-m>
+				<y-m>21.560</y-m>
+				<z-m>6.0</z-m>
+				<roll-deg>0.0</roll-deg>
+				<pitch-deg>0.0</pitch-deg>
+				<heading-deg>-110.0</heading-deg>
+			</offsets>
+  	</model>
+	
+<!-- Skiers -->
+	<model>
+		<name>Skier1</name>
+		<path>Patscherkofel_Skier1.ac</path>
+			<condition>
+				<equals>
+					<property>sim/startup/season</property>
+					<value>winter</value>
+				</equals>
+			</condition>
+			<offsets>
+				<x-m>10.8</x-m>
+				<y-m>22</y-m>
+				<z-m>5.93</z-m>
+				<roll-deg>0.0</roll-deg>
+				<pitch-deg>0.0</pitch-deg>
+				<heading-deg>0.0</heading-deg>
+			</offsets>
+	</model>
+	
+<!-- Pylons Set -->
+	<!-- Pylon 1 (from uphill) -->
+	<model>
+	<name>pyl_01</name>
+	<path>../../../Models/Transport/Chairlift_Pylon10m.ac</path>
+		<offsets>
+			<x-m> 0.0 </x-m>
+			<y-m> -60 </y-m>
+			<z-m> -11.852 </z-m>
+			<roll-deg>    0.0 </roll-deg>
+			<pitch-deg>   0.0 </pitch-deg>
+			<heading-deg> 0.0 </heading-deg>
+		</offsets>
+  	</model>
+
+	<!-- Pylon 2 (from uphill) -->
+	<model>
+	<name>pyl_02</name>
+	<path>../../../Models/Transport/Chairlift_Pylon10m.ac</path>
+		<offsets>
+			<x-m> 0.0 </x-m>
+			<y-m> -130 </y-m>
+			<z-m> -14.9 </z-m>
+			<roll-deg>    0.0 </roll-deg>
+			<pitch-deg>   0.0 </pitch-deg>
+			<heading-deg> 0.0 </heading-deg>
+		</offsets>
+	</model> 
+
+	<!-- Pylon 3 (from uphill) -->
+	<model>
+	<name>pyl_03</name>
+	<path>../../../Models/Transport/Chairlift_Pylon10m.ac</path>
+		<offsets>
+			<x-m> 0.0 </x-m>
+			<y-m> -180 </y-m>
+			<z-m> -35.5 </z-m>
+			<roll-deg>   15.0 </roll-deg>
+			<pitch-deg>   0.0 </pitch-deg>
+			<heading-deg> 0.0 </heading-deg>
+		</offsets>
+	</model>
+
+	<!-- Pylon 4 (from uphill) -->
+	<model>
+	<name>pyl_04</name>
+	<path>../../../Models/Transport/Chairlift_Pylon10m.ac</path>
+		<offsets>
+			<x-m> 0.0 </x-m>
+			<y-m> -260 </y-m>
+			<z-m> -67.2 </z-m>
+			<roll-deg>   15.0 </roll-deg>
+			<pitch-deg>   0.0 </pitch-deg>
+			<heading-deg> 0.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<!-- Pylon 5 (from uphill) -->
+	<model>
+	<name>pyl_05</name>
+	<path>../../../Models/Transport/Chairlift_Pylon10m.ac</path>
+		<offsets>
+			<x-m> 0.0 </x-m>
+			<y-m> -320 </y-m>
+			<z-m> -90.9 </z-m>
+			<roll-deg>   20.0 </roll-deg>
+			<pitch-deg>   0.0 </pitch-deg>
+			<heading-deg> 0.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<!-- Pylon 6 (from uphill) -->
+	<model>
+	<name>pyl_06</name>
+	<path>../../../Models/Transport/Chairlift_Pylon10m.ac</path>
+		<offsets>
+			<x-m> 0.0 </x-m>
+			<y-m> -400 </y-m>
+			<z-m> -149 </z-m>
+			<roll-deg>   15.0 </roll-deg>
+			<pitch-deg>   0.0 </pitch-deg>
+			<heading-deg> 0.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<!-- Pylon 7 (from uphill) -->	
+	<model>
+	<name>pyl_07</name>
+	<path>../../../Models/Transport/Chairlift_Pylon10m.ac</path>
+		<offsets>
+			<x-m> 0.0 </x-m>
+			<y-m> -460 </y-m>
+			<z-m> -184.3 </z-m>
+			<roll-deg>   15.0 </roll-deg>
+			<pitch-deg>   0.0 </pitch-deg>
+			<heading-deg> 0.0 </heading-deg>
+		</offsets>
+	</model>
+
+	<!-- Pylon 8 (from uphill) -->
+	<model>
+	<name>pyl_08</name>
+	<path>../../../Models/Transport/Chairlift_Pylon10m.ac</path>
+		<offsets>
+			<x-m> 0.0 </x-m>
+			<y-m> -540 </y-m>
+			<z-m> -217.5 </z-m>
+			<roll-deg>   15.0 </roll-deg>
+			<pitch-deg>   0.0 </pitch-deg>
+			<heading-deg> 0.0 </heading-deg>
+		</offsets>
+	</model>
+
+	<!-- Pylon 9 (from uphill) -->
+	<model>
+	<name>pyl_09</name>
+	<path>../../../Models/Transport/Chairlift_Pylon10m.ac</path>
+		<offsets>
+			<x-m> 0.0 </x-m>
+			<y-m> -620 </y-m>
+			<z-m> -253.5 </z-m>
+			<roll-deg>   15.0 </roll-deg>
+			<pitch-deg>   0.0 </pitch-deg>
+			<heading-deg> 0.0 </heading-deg>
+		</offsets>
+	</model>
+	
+<!-- Seats going uphill, starting from top wheel down-->
+	<!-- Seat 1 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> 3.0 </y-m>
+      		<z-m> 8.975 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 2 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -5.055 </y-m>
+      		<z-m>8.972</z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 3 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -20.055 </y-m>
+      		<z-m>6.829</z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 4 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -35.055 </y-m>
+      		<z-m>3.875</z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 5 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -50.055 </y-m>
+      		<z-m>  0.895 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>		
+	<!-- Seat 6 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -65.055 </y-m>
+      		<z-m>  -1.585 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 7 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -80.055 </y-m>
+      		<z-m>  -2.156 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 8 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -95.055 </y-m>
+      		<z-m>  -2.699 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 9 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -110.055 </y-m>
+      		<z-m>  -3.327 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 10 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -125.055 </y-m>
+      		<z-m>  -3.898 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 11 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -140.055 </y-m>
+      		<z-m>  -7.754 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 12 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -155.055 </y-m>
+      		<z-m>  -13.836 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 13 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -170.055 </y-m>
+      		<z-m>  -20.009 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 14 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -185.055 </y-m>
+      		<z-m>  -25.854 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 15 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -200.055 </y-m>
+      		<z-m> -31.748 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 16 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -215.055 </y-m>
+      		<z-m> -37.666 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 17 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -230.055 </y-m>
+      		<z-m> -43.622 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 18 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -245.055 </y-m>
+      		<z-m> -49.571 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 19 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -260.055 </y-m>
+      		<z-m> -55.499 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 20 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -275.055 </y-m>
+      		<z-m> -61.485 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 21 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -290.055 </y-m>
+      		<z-m> -67.386 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 22 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -305 </y-m>
+      		<z-m> -73.25 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 23 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -320 </y-m>
+      		<z-m> -79.2275 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>		
+	<!-- Seat 24 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -335 </y-m>
+      		<z-m> -88.64 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 25 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -350 </y-m>
+      		<z-m> -99.854 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 26 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -365 </y-m>
+      		<z-m> -110.97 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+<!-- Seat 27 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -380 </y-m>
+      		<z-m> -122.07 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 28 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -395 </y-m>
+      		<z-m> -133.22 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 29 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -410 </y-m>
+      		<z-m> -142.48 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 30 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -425 </y-m>
+      		<z-m> -151.49 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 31 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -440 </y-m>
+      		<z-m> -160.47 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 32 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -455 </y-m>
+      		<z-m> -169.43 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 33 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -470 </y-m>
+      		<z-m> -176.64 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 34(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -485 </y-m>
+      		<z-m> -183 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 35(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -500 </y-m>
+      		<z-m> -189.3 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 36(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -515 </y-m>
+      		<z-m> -195.6 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 36(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -515 </y-m>
+      		<z-m> -195.6 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 37(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -530 </y-m>
+      		<z-m> -201.9 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 38(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -545 </y-m>
+      		<z-m> -207.65 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 39(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -560 </y-m>
+      		<z-m> -214.5 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 40(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -575 </y-m>
+      		<z-m> -221.35 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 41(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -590 </y-m>
+      		<z-m> -228.14 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 42(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -605 </y-m>
+      		<z-m> -234.99 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 43(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -620 </y-m>
+      		<z-m> -241.76 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 44(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -635 </y-m>
+      		<z-m> -249.06 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 45(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -650 </y-m>
+      		<z-m> -256.93 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>		
+	<!-- Seat 46(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -665 </y-m>
+      		<z-m> -262.32 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 47(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> 1.6 </x-m>
+      		<y-m> -680 </y-m>
+      		<z-m> -264.64 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 0.0 </heading-deg>
+    	</offsets>
+  	</model>
+	
+<!-- Seats going DOWNHILL, starting from top wheel down-->
+	<!-- Seat 1 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> 3.0 </y-m>
+      		<z-m> 8.975 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 2 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -5.055 </y-m>
+      		<z-m>8.972</z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 3 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -20.055 </y-m>
+      		<z-m>6.829</z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 4 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -35.055 </y-m>
+      		<z-m>3.875</z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 5 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -50.055 </y-m>
+      		<z-m>  0.895 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>		
+	<!-- Seat 6 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -65.055 </y-m>
+      		<z-m>  -1.585 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 7 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -80.055 </y-m>
+      		<z-m>  -2.156 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 8 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -95.055 </y-m>
+      		<z-m>  -2.699 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 9 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -110.055 </y-m>
+      		<z-m>  -3.327 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 10 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -125.055 </y-m>
+      		<z-m>  -3.898 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 11 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -140.055 </y-m>
+      		<z-m>  -7.754 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 12 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -155.055 </y-m>
+      		<z-m>  -13.836 </z-m>
+      		<roll-deg>  0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 13 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -170.055 </y-m>
+      		<z-m>  -20.009 </z-m>
+      		<roll-deg>  0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 14 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -185.055 </y-m>
+      		<z-m>  -25.854 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 15 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -200.055 </y-m>
+      		<z-m> -31.748 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 16 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -215.055 </y-m>
+      		<z-m> -37.666 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 17 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -230.055 </y-m>
+      		<z-m> -43.622 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 18 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -245.055 </y-m>
+      		<z-m> -49.571 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg>180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 19 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -260.055 </y-m>
+      		<z-m> -55.499 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg>180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 20 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -275.055 </y-m>
+      		<z-m> -61.485 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 21 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -290.055 </y-m>
+      		<z-m> -67.386 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 22 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -305 </y-m>
+      		<z-m> -73.25 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	
+	<!-- Seat 23 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -320 </y-m>
+      		<z-m> -79.2275 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>		
+	<!-- Seat 24 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -335 </y-m>
+      		<z-m> -88.64 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>			
+
+	<!-- Seat 25 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -350 </y-m>
+      		<z-m> -99.854 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 26 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -365 </y-m>
+      		<z-m> -110.97 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 27 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -380 </y-m>
+      		<z-m> -122.07 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 28 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -395 </y-m>
+      		<z-m> -133.22 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 29 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -410 </y-m>
+      		<z-m> -142.48 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 30 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -425 </y-m>
+      		<z-m> -151.49 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 31 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -440 </y-m>
+      		<z-m> -160.47 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 32 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -455 </y-m>
+      		<z-m> -169.43 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 33 (from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -470 </y-m>
+      		<z-m> -176.64 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 34(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -485 </y-m>
+      		<z-m> -183 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 35(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -500 </y-m>
+      		<z-m> -189.3 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 36(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -515 </y-m>
+      		<z-m> -195.6 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 36(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -515 </y-m>
+      		<z-m> -195.6 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 37(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -530 </y-m>
+      		<z-m> -201.9 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 38(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -545 </y-m>
+      		<z-m> -207.65 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 39(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -560 </y-m>
+      		<z-m> -214.5 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 40(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -575 </y-m>
+      		<z-m> -221.35 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 41(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -590 </y-m>
+      		<z-m> -228.14 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 42(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -605 </y-m>
+      		<z-m> -234.99 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 43(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -620 </y-m>
+      		<z-m> -241.76 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 44(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -635 </y-m>
+      		<z-m> -249.06 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+	<!-- Seat 45(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -650 </y-m>
+      		<z-m> -256.93 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>		
+	<!-- Seat 46(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -665 </y-m>
+      		<z-m> -262.32 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>	
+	<!-- Seat 47(from uphill) -->
+	<model>
+    	<path>../../../Models/Transport/Chairlift_Seat.ac</path>
+    	<offsets>
+      		<x-m> -1.6 </x-m>
+      		<y-m> -680 </y-m>
+      		<z-m> -264.64 </z-m>
+      		<roll-deg>    0.0 </roll-deg>
+      		<pitch-deg>   0.0 </pitch-deg>
+      		<heading-deg> 180.0 </heading-deg>
+    	</offsets>
+  	</model>
+
+	
+<!-- LOD Detail-->
+	<animation>
+		<type>range</type>
+		<object-name>Lamp1</object-name>
+		<object-name>Lamp2</object-name>
+		<object-name>Lamp3</object-name>
+		<object-name>Skier1</object-name>
+		<object-name>seat_0</object-name>
+		<object-name>seat_1</object-name>
+			<min-m>0</min-m>
+			<max-m>2000</max-m>
+	</animation>
+	
+	<!-- LOD Pylons-->
+	<animation>
+		<type>range</type>
+		<object-name>pyl_01</object-name>
+		<object-name>pyl_02</object-name>
+		<object-name>pyl_03</object-name>
+		<object-name>pyl_04</object-name>
+		<object-name>pyl_05</object-name>
+		<object-name>pyl_06</object-name>
+		<object-name>pyl_07</object-name>
+		<object-name>pyl_08</object-name>
+		<object-name>pyl_09</object-name>
+			<min-m>0</min-m>
+			<max-m>5000</max-m>
+	</animation>
+	
+<!-- LOD -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>8000</max-m>
+	</animation>
+	
+</PropertyList>

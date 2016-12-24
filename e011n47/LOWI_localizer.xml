@@ -4,7 +4,7 @@
 <path>LOWI_localizer.ac</path>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> -1.000 </x-m>
       <y-m>-14.549 </y-m>
@@ -15,7 +15,7 @@
 </model>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> -1.000 </x-m>
       <y-m> 0.000 </y-m>
@@ -26,7 +26,7 @@
 </model>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m>-1.000 </x-m>
       <y-m>14.549 </y-m>

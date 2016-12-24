@@ -3,9 +3,11 @@
        
 <path>LOWI_garage_main.ac</path>
 
-<!-- nasal for the door function - All doors driven by 1 door property -->
-<!-- timer loop will check every 4 sec if door should be moved         -->
-<!-- door movement will take 3 sec to complete                         -->
+<!-- nasal for the door function - All doors driven by 2 door propertys -->
+<!-- timer loop will check every 4 sec if door should be moved          -->
+<!-- door movement will take 3 sec to complete                          -->
+
+<!-- NOTE: currently door[0] is used to drive the lightmaps at all LOWI models -->
 
 	<nasal>
 		<load>
@@ -65,72 +67,190 @@
 	
 	</nasal>
 
+<!-- Window and Lights illumination -->	
+<effect>
+	<inherits-from>Effects/model-combined-deferred</inherits-from>
+	<parameters>
+		<lightmap-enabled type="int">1</lightmap-enabled>
+		<texture n="3">
+			<image>LOWI_garage_main_LM.png</image>
+			<wrap-s>repeat</wrap-s>
+		</texture>
+		<lightmap-factor type="float" n="0">
+			<use>/scenery/LOWI/garage[0]/door[0]/position-norm</use>
+		</lightmap-factor>
+	</parameters>
+		<object-name>windows_main_01</object-name>
+		<object-name>door_main_1_1</object-name>
+		<object-name>door_main_1_2</object-name>
+		<object-name>door_main_1_3</object-name>
+		<object-name>door_main_1_4</object-name>
+		<object-name>door_main_1_5</object-name>
+		<object-name>door_main_2_1</object-name>
+		<object-name>door_main_2_2</object-name>
+		<object-name>door_main_2_3</object-name>
+		<object-name>door_main_2_4</object-name>
+		<object-name>door_main_2_5</object-name>
+		<object-name>app_lights_main_01</object-name>
+</effect>
 
-<!--
-<model>
-   <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
-    <offsets>
-      <x-m> 4.000 </x-m>
-      <y-m> 36.500 </y-m>
-      <z-m> 9.370 </z-m>
-      <pitch-deg> 0.00</pitch-deg>
-	  <heading-deg>0.0 </heading-deg>
-    </offsets>
-</model>
+<effect>
+	<inherits-from>Effects/model-combined-deferred</inherits-from>
+	<parameters>
+		<lightmap-enabled type="int">1</lightmap-enabled>
+		<texture n="3">
+			<image>LOWI_garage_fire_LM.png</image>
+			<wrap-s>repeat</wrap-s>
+		</texture>
+		<lightmap-factor type="float" n="0">
+			<use>/scenery/LOWI/garage[0]/door[0]/position-norm</use>
+		</lightmap-factor>
+	</parameters>
+		<object-name>windows_fire_01</object-name>
+		<object-name>door_fire_1_1</object-name>
+		<object-name>door_fire_1_2</object-name>
+		<object-name>door_fire_2_1</object-name>
+		<object-name>door_fire_2_2</object-name>
+		<object-name>door_fire_3_1</object-name>
+		<object-name>door_fire_3_2</object-name>
+		<object-name>door_fire_4_1</object-name>
+		<object-name>door_fire_4_2</object-name>
+		<object-name>door_fire_5_1</object-name>
+		<object-name>door_fire_5_2</object-name>
+</effect>
 
-<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
-    <offsets>
-      <x-m> 36.000 </x-m>
-      <y-m> 36.500 </y-m>
-      <z-m> 9.370 </z-m>
-      <pitch-deg> 0.00</pitch-deg>
-	  <heading-deg>0.0 </heading-deg>
-    </offsets>
-</model>
-
-<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
-    <offsets>
-      <x-m> 4.000 </x-m>
-      <y-m> 4.700 </y-m>
-      <z-m> 9.370 </z-m>
-      <pitch-deg> 0.00</pitch-deg>
-	  <heading-deg>0.0 </heading-deg>
-    </offsets>
-</model>
-
-<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
-    <offsets>
-      <x-m> 36.000 </x-m>
-      <y-m> 4.700 </y-m>
-      <z-m> 9.370 </z-m>
-      <pitch-deg> 0.00</pitch-deg>
-	  <heading-deg>0.0 </heading-deg>
-    </offsets>
-</model>
--->
-
-<!-- Obstruction lamp glass illumination 
-<animation>
-	<type>material</type> 
-	<object-name>osbt_lamp_light_E</object-name>
-	<condition>		
-	<greater-than>		
-	<property>/sim/time/sun-angle-rad</property>
-	<value>1.57</value>
-	</greater-than>
-	</condition>
-	<emission>	
-	<red>0.8</red>	
-	<green>0.8</green>	
-	<blue>0.8</blue>
-	</emission>
-</animation>
--->
+<!-- REMBRANDT light -->
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<name>LightSource</name>
+		<object-name>LightVolume</object-name>
+		<position>
+			<x>-0.000</x>
+			<y> 0.000</y>
+			<z> 0.200</z>
+		</position>
+		<direction>
+			<x>-11.000</x>
+			<y>  0.000</y>
+			<z>-16.000</z>
+		</direction>
+		<ambient>
+			<r>0.5</r>
+			<g>0.5</g>
+			<b>0.5</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.6</r>
+			<g>0.505</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.6</r>
+			<g>0.6</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.0002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<exponent>8.0</exponent>
+		<cutoff>90</cutoff>
+		<near-m>1.0</near-m>
+		<far-m>300</far-m>
+	</animation>
 	
+	<animation>
+	<type>select</type>
+	<object-name>LightSource</object-name>
+		<condition>
+			<and>
+			<greater-than>
+				<property>/scenery/LOWI/garage[0]/door[0]/position-norm</property>
+				<value>0.15</value>
+			</greater-than>
+			<property>/sim/rendering/rembrandt/enabled</property>
+			<greater-than>
+				<property>/sim/rendering/shaders/lights</property>
+				<value>0.0</value>
+			</greater-than>
+			</and>
+		</condition>
+	</animation>
 	
+
+<!-- Light volume models airfield light - 01 -->
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m>-27.547 </x-m>
+      <y-m>-18.985 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>50.0</heading-deg>
+    </offsets>
+</model>
+
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m>-26.649 </x-m>
+      <y-m>-19.157 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>90.0</heading-deg>
+    </offsets>
+</model>
+
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m>-25.743 </x-m>
+      <y-m>-18.982 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>130.0</heading-deg>
+    </offsets>
+</model>
+
+<!-- Light volume models airfield light - 02 -->
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m> 22.848 </x-m>
+      <y-m>-18.985 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>50.0</heading-deg>
+    </offsets>
+</model>
+
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m> 23.746 </x-m>
+      <y-m>-19.157 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>90.0</heading-deg>
+    </offsets>
+</model>
+
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m> 24.652 </x-m>
+      <y-m>-18.982 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>130.0</heading-deg>
+    </offsets>
+</model>
+
 <!-- Garage Main and Garage Fire doorgroups -->
 	<animation>
 		<name>door_main_1_all</name>
@@ -179,25 +299,6 @@
 			<object-name>door_fire_5_1</object-name>
 			<object-name>door_fire_5_2</object-name>
 	</animation>
-
-<!-- Garage Main Door 1 animation test
-	<animation>
-		<type>translate</type>
-		<object-name>door_main_1_all</object-name>
-		<property>/sim/time/sun-angle-rad</property>
-		<factor>1</factor>
-			<interpolation>
-				<entry><ind> 0.00 </ind><dep>  5.00 </dep></entry>
-				<entry><ind> 1.49 </ind><dep> 5.00 </dep></entry>
-				<entry><ind> 1.50 </ind><dep> 0.00 </dep></entry>
-				<entry><ind> 2.00 </ind><dep> 0.00 </dep></entry>
-			</interpolation>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
-	</animation> -->
 	
 <!-- Garage Main Door 1 animation -->
 	<animation>
@@ -322,74 +423,6 @@
 			</greater-than>
 		</condition>
 	</animation>
-	
-	
-<!-- Office windows night illumination -->
-	<animation>
-		<type>material</type> 
-			<object-name>windows_main_office</object-name>
-			<object-name>windows_main_gate</object-name>
-			<object-name>windows_main_roof</object-name>
-			<object-name>windows_main_r2</object-name>
-			<object-name>windows_fire_roof</object-name>
-			
-			<object-name>door_main</object-name>
-			<object-name>door_main_1_all</object-name>
-			<object-name>door_main_2_all</object-name>
-		<condition>		
-			<greater-than>		
-				<property>/sim/time/sun-angle-rad</property>
-				<value>1.52</value>
-			</greater-than>
-		</condition>
-		<emission>	
-			<red>0.7</red>	
-			<green>0.7</green>	
-			<blue>0.7</blue>
-		</emission>
-	</animation>
-	
-	<animation>
-		<type>select</type> 
-		<object-name>windows_main_office</object-name>
-		<object-name>windows_main_gate</object-name>
-			<condition>		
-				<greater-than>
-					<property>/sim/time/sun-angle-rad</property>
-					<value>1.52</value>
-				</greater-than>
-			</condition>
-	</animation>
-	
-<!-- Appron Floodlights illumination -->
-	<animation>
-		<type>material</type> 
-			<object-name>app_lights_main_01</object-name>
-		<condition>		
-			<greater-than>		
-				<property>/sim/time/sun-angle-rad</property>
-				<value>1.52</value>
-			</greater-than>
-		</condition>
-		<emission>	
-			<red>0.9</red>	
-			<green>0.9</green>	
-			<blue>0.9</blue>
-		</emission>
-	</animation>
-
-<!-- dont show the light model during day
-<animation>
-	<type>select</type> 
-	<object-name>lowi_egtest_ol_01</object-name>
-	<condition>		
-	<greater-than>		
-	<property>/sim/time/sun-angle-rad</property>
-	<value>1.57</value>
-	</greater-than>
-	</condition>
-</animation>
--->
 
 <!-- LOD -->
 <animation>

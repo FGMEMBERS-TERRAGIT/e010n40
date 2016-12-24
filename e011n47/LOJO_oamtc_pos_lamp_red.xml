@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PropertyList>
+       
+<path>LOJO_oamtc_pos_lamp_red.ac</path>
+	
+<model>
+	<path>LOJO_oamtc_pos_lamp_red_light.ac</path>
+	<offsets>
+		<x-m> 0.000 </x-m>
+		<y-m> 0.000 </y-m>
+		<z-m> 0.050 </z-m>
+		<pitch-deg> 0.00</pitch-deg>
+		<heading-deg>0.0 </heading-deg>
+	</offsets>
+</model>
+	
+	<animation>
+		<type>range</type>
+		<object-name>osbt_lamp_housing</object-name>
+		<min-m>0</min-m>
+		<max-m>7000</max-m>
+	</animation>
+
+	
+	<animation>
+		<object-name>osbt_lamp_red_light</object-name>
+		<enable-hot type="bool">false</enable-hot>
+	</animation>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>osbt_lamp_red_light</object-name>
+	</animation>
+
+	<animation>
+		<type>alpha-test</type>
+		<alpha-factor>0.01</alpha-factor>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>osbt_lamp_red_light</object-name>
+		<condition>
+			<greater-than>
+				<property>sim/time/sun-angle-rad</property>
+				<value>1.57</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>range</type>
+		<object-name>osbt_lamp_red_light</object-name>
+		<min-m>0</min-m>
+		<max-m>10000</max-m>
+	</animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>osbt_lamp_red_light</object-name>
+        <spherical type="bool">true</spherical>
+    </animation>
+
+	<animation>
+	<type>dist-scale</type>
+	<object-name>osbt_lamp_red_light</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0.025</dep>
+			</entry>
+			<entry>
+				<ind>300</ind>
+				<dep>0.1</dep>
+			</entry>
+			<entry>
+				<ind>1500</ind>
+				<dep>0.3</dep>
+			</entry>
+			<entry>
+				<ind>4000</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>10000</ind>
+				<dep>1.5</dep>
+			</entry>
+		</interpolation>
+	</animation>
+       
+</PropertyList>

@@ -3,8 +3,15 @@
        
 <path>LOWI_hangar_n1.ac</path>
 
+<!-- Rembrandt -->
+<effect>
+	<inherits-from>Effects/model-transparent</inherits-from>
+	<object-name>hangar_01_glass_1</object-name>
+	<object-name>hangar_01_glass_2</object-name>
+</effect>
+
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> 1.600 </x-m>
       <y-m> 41.800 </y-m>
@@ -15,7 +22,7 @@
 </model>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> 68.400 </x-m>
       <y-m> 41.800 </y-m>
@@ -26,7 +33,7 @@
 </model>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> 1.600 </x-m>
       <y-m> 8.200 </y-m>
@@ -37,7 +44,7 @@
 </model>
 
 <model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> 68.400 </x-m>
       <y-m> 8.200 </y-m>
@@ -52,23 +59,6 @@
 	<type>material</type> 
 	<object-name>hangar_01_glass_1</object-name>
 	<object-name>hangar_01_glass_2</object-name>
-	<condition>		
-		<greater-than>		
-			<property>/sim/time/sun-angle-rad</property>
-			<value>1.57</value>
-		</greater-than>
-	</condition>
-	<emission>	
-		<red>0.7</red>	
-		<green>0.6</green>	
-		<blue>0.4</blue>
-	</emission>
-</animation>
-
-<!-- Office night window illumination -->
-<animation>
-	<type>material</type> 
-	<object-name>lowi_h1_ol_01</object-name>
 	<condition>		
 		<greater-than>		
 			<property>/sim/time/sun-angle-rad</property>
@@ -104,19 +94,6 @@
 		<blue>0.8</blue>
 	</emission>
 </animation>
-
-<!-- dont show the light model during day-->
-<animation>
-	<type>select</type> 
-	<object-name>lowi_h1_ol_01</object-name>
-	<condition>		
-	<greater-than>		
-	<property>/sim/time/sun-angle-rad</property>
-	<value>1.57</value>
-	</greater-than>
-	</condition>
-</animation>
-
 
 <!-- LOD -->
 <animation>

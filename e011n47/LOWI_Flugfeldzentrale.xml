@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PropertyList>
+       
+<path>LOWI_Flugfeldzentrale.ac</path>
+
+<effect>
+	<inherits-from>Effects/model-combined-deferred</inherits-from>
+	<parameters>
+		<lightmap-enabled type="int">1</lightmap-enabled>
+		<texture n="3">
+			<image>LOWI_Flugfeldzentrale_LM.png</image>
+			<wrap-s>repeat</wrap-s>
+		</texture>
+		<lightmap-factor type="float" n="0">
+			<use>/scenery/LOWI/garage[0]/door[0]/position-norm</use>
+		</lightmap-factor>
+	</parameters>
+		<object-name>window_lights</object-name>
+</effect>
+	
+<!-- Summer / Winter selection -->
+	
+	<animation>
+	<type>textranslate</type> 
+		<object-name>tree_01</object-name>
+			<condition>
+				<equals>
+					<property>sim/startup/season</property>
+					<value>winter</value>
+				</equals>
+			</condition>
+			<offset>0.50</offset>
+				<center>
+					<x-m> 0 </x-m>
+					<y-m> 0 </y-m>
+					<z-m> 0 </z-m>
+				</center>
+				<axis> 
+					<x> -1 </x> 
+					<y>  0 </y> 
+					<z>  0 </z> 
+				</axis>
+	</animation>
+
+<!-- LOD -->
+	<animation>
+		<type>range</type>
+			<min-m>0</min-m>
+			<max-m>15000</max-m>
+	</animation>
+	
+       
+</PropertyList>

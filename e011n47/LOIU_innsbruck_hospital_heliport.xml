@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <PropertyList>
 
@@ -11,7 +11,7 @@
 	
 <!-- Lift Building Obstruction Lights -->
 	<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> -6.900 </x-m>
       <y-m>  7.800 </y-m>
@@ -22,7 +22,7 @@
 	</model>
 	
 	<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> -6.900 </x-m>
       <y-m> -7.800 </y-m>
@@ -33,7 +33,7 @@
 	</model>
 	
 	<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> -0.100 </x-m>
       <y-m>  7.800 </y-m>
@@ -44,7 +44,7 @@
 	</model>
 	
 	<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> -0.100 </x-m>
       <y-m> -7.800 </y-m>
@@ -56,7 +56,7 @@
 	
 <!-- Main Building Obstruction Lights -->
 	<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m>-15.850 </x-m>
       <y-m>-56.850 </y-m>
@@ -67,7 +67,7 @@
 	</model>
 	
 	<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m>-15.850 </x-m>
       <y-m> 56.850 </y-m>
@@ -78,7 +78,7 @@
 	</model>
 	
 	<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> -0.150 </x-m>
       <y-m>-56.850 </y-m>
@@ -89,7 +89,7 @@
 	</model>
 	
 	<model>
-    <path>Models/Effects/pos_lamp_red_light_2st.xml</path>
+    <path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path>
     <offsets>
       <x-m> -0.150 </x-m>
       <y-m> 56.850 </y-m>
@@ -101,7 +101,7 @@
 	
 <!-- Helipad Green Pos Lights -->
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -10.257 </x-m>
       <y-m>  8.138 </y-m>
@@ -112,7 +112,7 @@
 	</model>
 
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -14.107 </x-m>
       <y-m>  8.232 </y-m>
@@ -123,7 +123,7 @@
 	</model>
 
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -20.184 </x-m>
       <y-m>  13.589 </y-m>
@@ -134,7 +134,7 @@
 	</model>
 
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -28.272 </x-m>
       <y-m>  14.116 </y-m>
@@ -145,7 +145,7 @@
 	</model>
 
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -35.158 </x-m>
       <y-m>  9.369 </y-m>
@@ -156,7 +156,7 @@
 	</model>
 
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -37.549 </x-m>
       <y-m>  1.862 </y-m>
@@ -167,7 +167,7 @@
 	</model>
 
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -34.712 </x-m>
       <y-m> -5.948 </y-m>
@@ -178,7 +178,7 @@
 	</model>
 
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -27.853 </x-m>
       <y-m> -10.221 </y-m>
@@ -189,7 +189,7 @@
 	</model>
 
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -20.177 </x-m>
       <y-m> -9.586 </y-m>
@@ -200,7 +200,7 @@
 	</model>
 	
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -14.139 </x-m>
       <y-m> -4.287 </y-m>
@@ -211,7 +211,7 @@
 	</model>
 	
 	<model>
-    <path>Models/Effects/helipad_light_green_2st.xml</path>
+    <path>../../../Models/Effects/helipad_light_green_2st.xml</path>
     <offsets>
       <x-m> -10.254 </x-m>
       <y-m> -4.150 </y-m>

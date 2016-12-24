@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PropertyList>
+       
+<path>LOWI_kranebitter_treeset.ac</path>	
+	
+<!-- Summer / Winter selection -->
+	
+	<animation>
+	<type>textranslate</type> 
+		<object-name>tree_01</object-name>
+		<object-name>tree_02</object-name>
+		<object-name>tree_03</object-name>
+		<object-name>tree_04</object-name>
+		<object-name>tree_05</object-name>
+		<object-name>tree_06</object-name>
+		<object-name>tree_07</object-name>
+		<object-name>tree_08</object-name>
+		<object-name>tree_09</object-name>
+		<object-name>tree_10</object-name>
+		<object-name>tree_11</object-name>
+		<object-name>tree_12</object-name>
+		<object-name>tree_13</object-name>
+		<object-name>tree_14</object-name>
+			<condition>
+				<equals>
+					<property>sim/startup/season</property>
+					<value>winter</value>
+				</equals>
+			</condition>
+			<offset>0.50</offset>
+				<center>
+					<x-m> 0 </x-m>
+					<y-m> 0 </y-m>
+					<z-m> 0 </z-m>
+				</center>
+				<axis> 
+					<x> -1 </x> 
+					<y>  0 </y> 
+					<z>  0 </z> 
+				</axis>
+	</animation>
+
+	<!-- 
+	<animation>
+		<type>alpha-test</type>
+		<alpha-factor>0.2</alpha-factor>
+	</animation>
+	-->
+
+<!-- LOD 
+	<animation>
+		<type>range</type>
+			<min-m>0</min-m>
+			<max-m>15000</max-m>
+	</animation>
+	-->
+       
+</PropertyList>

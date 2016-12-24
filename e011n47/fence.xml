@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+	<path>fence.ac</path>
+	<animation>
+		<type>range</type>
+		<two-sides type="bool">false</two-sides>
+		<object-name>poles</object-name>
+		<object-name>chain_link</object-name>
+		<min-m>0</min-m>
+		<max-m>2500</max-m>
+	</animation>
+</PropertyList>

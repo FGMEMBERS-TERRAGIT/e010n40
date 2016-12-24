@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+ <path>LOJO_libelle_track.ac</path>
+
+
+<nasal>
+ <load>
+ print("loading helipad Libelle LOJO");
+			var pad_name = "moveable_helipad1";
+			
+			var register_shipname = func {
+				#print("register helipad called");
+				var node_count = 0;
+				foreach (var mp_ship; props.globals.getNode("/ai/models").getChildren("ship")) {
+					var ship_name = mp_ship.getNode("name").getValue();
+					#print(ship_name);
+					if (ship_name != nil) {
+						print("register ship:  ", ship_name);
+						if (ship_name == pad_name) {	
+							print("register no:  ", node_count);
+							var ship_no = node_count;
+							print("node_count:  ", ship_no);
+							return ship_no;
+							var lat = mp_ship.getNode("position/latitude-deg").getValue();
+							var long = mp_ship.getNode("position/longitude-deg").getValue();
+							var alt = mp_ship.getNode("position/altitude-ft").getValue();
+							#print("lat:  ", lat, "  long:  ", long, "  alt:  ", alt);
+						}
+					}
+				node_count += 1;
+				}
+			}
+			
+			var pad_num = register_shipname();
+			#print("ship no:", register_shipname());
+			print("registered ship no:", pad_num);
+			
+			var es = props.globals.getNode("/sim/time/elapsed-sec").getValue() or 0;
+			
+			var lat = props.globals.getNode("/ai/models/ship[" ~ pad_num ~ "]/position/latitude-deg",1);
+			var long = props.globals.getNode("/ai/models/ship[" ~ pad_num ~ "]/position/longitude-deg",1);
+			var alt = props.globals.getNode("/ai/models/ship[" ~ pad_num ~ "]/position/altitude-ft",1);
+			var model_elev = props.globals.getNode("models/LOWI/model/model-elevation",1);
+			var poss = 0;
+			var loop_id = 0;
+			
+			var loop = func(id) {
+				id == loop_id or return;
+				
+				
+   				if ((es &lt;15) and (poss ==0)){
+				alt.setValue(1898.441329);
+				model_elev.setValue(1897.441329);
+				lat.setValue(47.2553387105);
+				long.setValue(11.3452086233);
+				print("set helipad LOWI Libelle");
+				setprop("/ai/models/ship[" ~ pad_num ~ "]/orientation/true-heading-deg", 200);
+				
+				poss=1;
+				};
+				
+			aircraft.makeNode("models/LOWI/model/path");
+			aircraft.makeNode("models/LOWI/model/longitude-deg-prop");
+			aircraft.makeNode("models/LOWI/model/latitude-deg-prop");
+			aircraft.makeNode("models/LOWI/model/elevation-ft-prop");
+			aircraft.makeNode("models/LOWI/model/heading-deg-prop");
+			setprop ("models/LOWI/model/path", "Models/Geometry/moveable_helipads/LOJO_helipad_libelle.xml");
+	                    setprop ("models/LOWI/model/longitude-deg-prop", "/ai/models/ship[" ~ pad_num ~ "]/position/longitude-deg");
+	                    setprop ("models/LOWI/model/latitude-deg-prop", "/ai/models/ship[" ~ pad_num ~ "]/position/latitude-deg");
+	                    setprop ("models/LOWI/model/heading-deg-prop", "/ai/models/ship[" ~ pad_num ~ "]/orientation/true-heading-deg");
+	                    setprop ("models/LOWI/model/elevation-ft-prop", "models/LOWI/model/model-elevation");
+			aircraft.makeNode("models/LOWI/model/load");	
+			
+                              var get_tgtspeed = props.globals.getNode("models/LOWI/model[0]/controls/tgt-speed-kts",1);
+			var get_speed = props.globals.getNode("models/LOWI/model[0]/velocities/speed-kts",1);
+			var setsurfacepos = props.globals.getNode("/models/LOWI/model[0]/surface-positions/rudder-pos-deg",1);
+			var get_surfacepos = props.globals.getNode("/models/LOWI/model[0]/surface-positions/rudder-pos-deg").getValue() or 0;
+			var get_tgtspeed = props.globals.getNode("models/LOWI/model[0]/controls/tgt-speed-kts").getValue() or 0;
+			var get_speed = props.globals.getNode("models/LOWI/model[0]/velocities/speed-kts").getValue() or 0;
+			
+			var surfacepos = props.globals.getNode("ai/models/ship[" ~ pad_num ~ "]/surface-positions/rudder-pos-deg",1);			
+			var tgtspeed = props.globals.getNode("ai/models/ship[" ~ pad_num ~ "]/controls/tgt-speed-kts",1);
+			var speed = props.globals.getNode("ai/models/ship[" ~ pad_num ~ "]/velocities/speed-kts",1);
+			
+			setsurfacepos.setValue(get_surfacepos);
+			tgtspeed.setValue(get_tgtspeed);
+			
+			if (get_tgtspeed ==0){
+			speed.setValue(get_speed);
+			};
+
+
+				settimer(func { loop(id) }, 0.1);
+			}
+			
+			
+			loop(loop_id += 1);
+		</load>
+		<unload>loop_id += 1</unload>
+ </nasal>
+ 
+
+
+ 
+ 
+ 
+
+</PropertyList>

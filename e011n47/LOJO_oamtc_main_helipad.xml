@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PropertyList>
+       
+<path>LOJO_oamtc_main_helipad.ac</path>
+
+<!-- Helipad Floodlights -->
+	
+	<!-- fside -->
+	<model>
+    <path>LOJO_oamtc_helipad_floodlight.xml</path>
+    <offsets>
+      <x-m>-14.620 </x-m>
+      <y-m> -9.620 </y-m>
+      <z-m>  0.020 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>135.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>LOJO_oamtc_helipad_floodlight.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -9.620 </y-m>
+      <z-m>  0.020 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>180.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>LOJO_oamtc_helipad_floodlight.xml</path>
+    <offsets>
+      <x-m> 14.620 </x-m>
+      <y-m> -9.620 </y-m>
+      <z-m>  0.020 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>225.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- rside -->
+	<model>
+    <path>LOJO_oamtc_helipad_floodlight.xml</path>
+    <offsets>
+      <x-m>-14.620 </x-m>
+      <y-m>  9.620 </y-m>
+      <z-m>  0.020 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>45.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>LOJO_oamtc_helipad_floodlight.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  9.620 </y-m>
+      <z-m>  0.020 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>0.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<model>
+    <path>LOJO_oamtc_helipad_floodlight.xml</path>
+    <offsets>
+      <x-m> 14.620 </x-m>
+      <y-m>  9.620 </y-m>
+      <z-m>  0.020 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>315.0 </heading-deg>
+    </offsets>
+	</model>
+	
+	<!-- NIGHT Texture Animations & illuminate Groups-->
+	<animation>
+		<name>nighttexture_pad</name>
+		<object-name>mainpad</object-name>
+		<object-name>lightfound_01</object-name>
+		<object-name>lightfound_02</object-name>
+	</animation>
+	
+	<animation>
+		<name>nighttexture_pad_ilu</name>
+		<object-name>mainpad</object-name>
+		<object-name>lightfound_01</object-name>
+		<object-name>lightfound_02</object-name>
+	</animation>
+	
+	<!-- Texture shift for main helipad textures -->
+	<animation>
+	<type>textranslate</type> 
+	<object-name>nighttexture_pad</object-name>
+	<condition>
+			<not>
+				<property>/sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+	<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[0]</property>
+		<interpolation>
+			<entry><ind> 0 </ind><dep>  0.00 </dep></entry>
+			<entry><ind> 1 </ind><dep>  0.50 </dep></entry>
+		</interpolation>
+	<center>
+		<x-m> 0 </x-m>
+		<y-m> 0 </y-m>
+		<z-m> 0 </z-m>
+	</center>
+	<axis> 
+		<x>  0 </x> 
+		<y> -1 </y> 
+		<z>  0 </z> 
+	</axis>
+	</animation>
+	
+	<!-- Texture illuminate for main helipad textures -->
+	<animation>
+	<type>material</type> 
+	<object-name>nighttexture_pad_ilu</object-name>
+		<condition>
+			<not>
+				<property>/sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+		<emission>	
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>1.0</blue>
+			<factor-prop>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[0]</factor-prop>
+		</emission>
+	</animation>
+	
+	<!-- 
+	<animation>
+	<type>material</type> 
+	<object-name>mainpad</object-name>
+		<friction-factor>25.10</friction-factor>
+		<rolling-friction>2.02</rolling-friction>
+		<bumpiness>0.1</bumpiness>
+	</animation>
+	-->
+
+<!-- LOD
+	<animation>
+		type>range</type>
+		<min-m>0</min-m>
+		<max-m>10000</max-m>
+	</animation>
+-->
+       
+</PropertyList>

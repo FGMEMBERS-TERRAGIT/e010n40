@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+<!-- HOLD light set - Hold light by longfly-->
+
+	
+	<!-- Taxiwy HOLD - Left -->
+	<model>
+		<path>Models/Airport/RGL.ac</path>
+		<offsets>
+		  <x-m> 0.000 </x-m>
+		  <y-m>-14.500 </y-m>
+		  <z-m>-0.120 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>250.0 </heading-deg>
+		</offsets>
+	</model>
+	
+		<!-- Taxiwy HOLD - Right -->
+	<model>
+		<path>Models/Airport/RGL.ac</path>
+		<offsets>
+		  <x-m>-0.000 </x-m>
+		  <y-m>14.500 </y-m>
+		  <z-m> 0.000 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>290.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>timed</type>
+			<object-name>ryellow</object-name>
+			<object-name>lyellow</object-name>
+		<use-personality type="bool">true</use-personality>
+			<branch-duration-sec>1.15</branch-duration-sec>
+			<branch-duration-sec>1.15</branch-duration-sec>
+	</animation>
+
+	<!-- Taxiwy HOLD - Left No 03 - Side High 
+	<model>
+		<path>Models/Airport/AP_Lights/approach_light_green.ac</path>
+		<offsets>
+		  <x-m> 0.000 </x-m>
+		  <y-m>-14.000 </y-m>
+		  <z-m> 0.000 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>160.0 </heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Models/Airport/AP_Lights/Light_effects/runway_end_light_red.ac</path>
+		<offsets>
+		  <x-m>-0.100 </x-m>
+		  <y-m>-14.000 </y-m>
+		  <z-m> 0.500 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>160.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Models/Airport/AP_Lights/approach_light_green.ac</path>
+		<offsets>
+		  <x-m> 0.000 </x-m>
+		  <y-m>-15.000 </y-m>
+		  <z-m> 0.000 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>160.0 </heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Models/Airport/AP_Lights/Light_effects/runway_end_light_red.ac</path>
+		<offsets>
+		  <x-m>-0.100 </x-m>
+		  <y-m>-15.000 </y-m>
+		  <z-m> 0.500 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>160.0 </heading-deg>
+		</offsets>
+	</model> -->
+
+	<!-- Taxiwy HOLD - Right No 03 - Side High 
+	<model>
+		<path>Models/Airport/AP_Lights/approach_light_green.ac</path>
+		<offsets>
+		  <x-m>-0.000 </x-m>
+		  <y-m>14.000 </y-m>
+		  <z-m> 0.050 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>200.0 </heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Models/Airport/AP_Lights/Light_effects/runway_end_light_red.ac</path>
+		<offsets>
+		  <x-m>-0.100 </x-m>
+		  <y-m>14.000 </y-m>
+		  <z-m> 0.550 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>200.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Models/Airport/AP_Lights/approach_light_green.ac</path>
+		<offsets>
+		  <x-m>-0.000 </x-m>
+		  <y-m>15.000 </y-m>
+		  <z-m> 0.050 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>200.0 </heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Models/Airport/AP_Lights/Light_effects/runway_end_light_red.ac</path>
+		<offsets>
+		  <x-m>-0.100 </x-m>
+		  <y-m>15.000 </y-m>
+		  <z-m> 0.550 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>200.0 </heading-deg>
+		</offsets>
+	</model> -->
+	
+	<!-- Light animations - curently visible at day 
+    <animation>
+        <type>noshadow</type>
+        <object-name>rwy_end_light_red</object-name>
+    </animation>
+
+    <animation>
+        <type>alpha-test</type>
+		<object-name>rwy_end_light_red</object-name>
+        <alpha-factor>0.01</alpha-factor>
+    </animation> -->
+	
+	<!-- LOD 
+	<animation>
+		<type>range</type>
+		<object-name>rwy_end_light_red</object-name>
+		<min-m>0</min-m>
+		<max-m>15000</max-m>
+	</animation>
+	
+	<animation>
+		<type>dist-scale</type>
+		<object-name>rwy_end_light_red</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0.025</dep>
+			</entry>
+			<entry>
+				<ind>300</ind>
+				<dep>0.1</dep>
+			</entry>
+			<entry>
+				<ind>1500</ind>
+				<dep>0.2</dep>
+			</entry>
+			<entry>
+				<ind>6000</ind>
+				<dep>0.7</dep>
+			</entry>
+			<entry>
+				<ind>20000</ind>
+				<dep>1.3</dep>
+			</entry>
+		</interpolation>
+	</animation> -->
+	
+</PropertyList>
+
