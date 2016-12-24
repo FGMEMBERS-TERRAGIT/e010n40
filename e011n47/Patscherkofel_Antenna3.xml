@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+<path>Patscherkofel_Antenna3.ac</path>
+  
+<model>
+<name>ant_01</name>
+	<path>Patscherkofel_HemiAntenna_L.ac</path>
+	<offsets>
+		<x-m> 1.141 </x-m>
+		<y-m> -0.80 </y-m>
+		<z-m> 9.739 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 90.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_02</name>
+	<path>Patscherkofel_HemiAntenna_L.ac</path>
+	<offsets>
+		<x-m> 1.141 </x-m>
+		<y-m> 0.80 </y-m>
+		<z-m> 9.739 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 90.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_03</name>
+	<path>Patscherkofel_HemiAntenna_S.ac</path>
+	<offsets>
+		<x-m> 0.994 </x-m>
+		<y-m> -0.985 </y-m>
+		<z-m> 11.7 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 0.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_04</name>
+	<path>Patscherkofel_HemiAntenna_S.ac</path>
+	<offsets>
+		<x-m> -0.994 </x-m>
+		<y-m> -0.985 </y-m>
+		<z-m> 11.7 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 0.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_05</name>
+	<path>Patscherkofel_HemiAntenna_S.ac</path>
+	<offsets>
+		<x-m> -0.969 </x-m>
+		<y-m> -0.985 </y-m>
+		<z-m> 13.7 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 0.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_06</name>
+	<path>Patscherkofel_HemiAntenna_S.ac</path>
+	<offsets>
+		<x-m> -0.969 </x-m>
+		<y-m> -0.985 </y-m>
+		<z-m> 15.7 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> -50.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_07</name>
+	<path>Patscherkofel_HemiAntenna_S.ac</path>
+	<offsets>
+		<x-m> 0.994 </x-m>
+		<y-m> 0.0 </y-m>
+		<z-m> 17.7 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 90.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_08</name>
+	<path>Patscherkofel_HemiAntenna_S.ac</path>
+	<offsets>
+		<x-m> 0.994 </x-m>
+		<y-m> 0.0 </y-m>
+		<z-m> 15.7 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 90.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_09</name>
+	<path>Patscherkofel_HemiAntenna_S.ac</path>
+	<offsets>
+		<x-m> 0.994 </x-m>
+		<y-m> 0.0 </y-m>
+		<z-m> 13.7 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 90.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_10</name>
+	<path>Patscherkofel_Antenna_Drum_1m.ac</path>
+	<offsets>
+		<x-m> 0.0 </x-m>
+		<y-m> 1.3 </y-m>
+		<z-m> 15.7 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 180.0 </heading-deg>
+	</offsets>
+</model>
+
+<model>
+<name>ant_11</name>
+	<path>Patscherkofel_Antenna_Drum_1m.ac</path>
+	<offsets>
+		<x-m> 0.0 </x-m>
+		<y-m> 1.3 </y-m>
+		<z-m> 13.7 </z-m>
+		<roll-deg>    0.0 </roll-deg>
+		<pitch-deg>   0.0 </pitch-deg>
+		<heading-deg> 180.0 </heading-deg>
+	</offsets>
+</model>
+
+
+<!-- LOD Detail-->
+	<animation>
+		<type>range</type>
+		<object-name>ant_01</object-name>
+		<object-name>ant_02</object-name>
+		<object-name>ant_03</object-name>
+		<object-name>ant_04</object-name>
+		<object-name>ant_05</object-name>
+		<object-name>ant_06</object-name>
+		<object-name>ant_07</object-name>
+		<object-name>ant_08</object-name>
+		<object-name>ant_09</object-name>
+		<object-name>ant_10</object-name>
+		<object-name>ant_11</object-name>
+		<min-m>0</min-m>
+		<max-m>1500</max-m>
+	</animation>
+	
+<!-- LOD -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>4000</max-m>
+	</animation>
+	
+</PropertyList>

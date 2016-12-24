@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PropertyList>
+       
+<path>LOWI_garage_main.ac</path>
+
+<!-- nasal for the door function - All doors driven by 2 door propertys -->
+<!-- timer loop will check every 4 sec if door should be moved          -->
+<!-- door movement will take 3 sec to complete                          -->
+
+<!-- NOTE: currently door[0] is used to drive the lightmaps at all LOWI models -->
+
+	<nasal>
+		<load>
+		if (!contains(globals, "scenery")) globals["scenery"] = {};
+		if (!contains(scenery, "LOWI")) scenery["LOWI"] = {};
+		if (!contains(scenery.LOWI, "garage")) scenery.LOWI["garage"] = [nil];
+		scenery.LOWI.garage[0] =
+			{ door :
+			[aircraft.door.new("/scenery/LOWI/garage[0]/door[0]", 3),
+			aircraft.door.new("/scenery/LOWI/garage[0]/door[1]", 3)
+			
+			]
+		};
+		
+		#this is the switch target sim time sun rad
+		var limwswitch = 1.48;
+		var limwswitch1 = 1.25;
+		var limwswitch2 = 1.35;
+		
+		var loop_id = 0;
+
+		var loop = func(id) {
+				id == loop_id or return;
+				var limwsun = getprop("/sim/time/sun-angle-rad");
+				var doorstate = getprop("/scenery/LOWI/garage[0]/door[0]/position-norm");
+				var doorstate1 = getprop("/scenery/LOWI/garage[0]/door[1]/position-norm");
+					#print ("limwsun  ", limwsun);
+				
+				#door0
+				if ((limwsun > limwswitch) and (doorstate == 0)){
+					scenery.LOWI.garage[0].door[0].toggle();
+					#print ("toggle door  ");
+					};
+				
+				if ((limwsun &lt; limwswitch) and (doorstate == 1)){
+					scenery.LOWI.garage[0].door[0].toggle();
+					#print ("toggle door  ");
+					};
+				
+				#door1
+				if ((limwsun > limwswitch2) and (doorstate1 == 0)){
+					scenery.LOWI.garage[0].door[1].toggle();
+					#print ("toggle door  ");
+					};
+				
+				if ((limwsun &lt; limwswitch1) and (doorstate1 == 1)){
+					scenery.LOWI.garage[0].door[1].toggle();
+					#print ("toggle door  ");
+					};
+		
+			settimer(func { loop(id) }, 4);
+			}
+			loop(loop_id += 1);
+	
+		</load>
+		<unload>loop_id += 1</unload>
+	
+	</nasal>
+
+<!-- Window and Lights illumination -->	
+<effect>
+	<inherits-from>Effects/model-combined-deferred</inherits-from>
+	<parameters>
+		<lightmap-enabled type="int">1</lightmap-enabled>
+		<texture n="3">
+			<image>LOWI_garage_main_LM.png</image>
+			<wrap-s>repeat</wrap-s>
+		</texture>
+		<lightmap-factor type="float" n="0">
+			<use>/scenery/LOWI/garage[0]/door[0]/position-norm</use>
+		</lightmap-factor>
+	</parameters>
+		<object-name>windows_main_01</object-name>
+		<object-name>door_main_1_1</object-name>
+		<object-name>door_main_1_2</object-name>
+		<object-name>door_main_1_3</object-name>
+		<object-name>door_main_1_4</object-name>
+		<object-name>door_main_1_5</object-name>
+		<object-name>door_main_2_1</object-name>
+		<object-name>door_main_2_2</object-name>
+		<object-name>door_main_2_3</object-name>
+		<object-name>door_main_2_4</object-name>
+		<object-name>door_main_2_5</object-name>
+		<object-name>app_lights_main_01</object-name>
+</effect>
+
+<effect>
+	<inherits-from>Effects/model-combined-deferred</inherits-from>
+	<parameters>
+		<lightmap-enabled type="int">1</lightmap-enabled>
+		<texture n="3">
+			<image>LOWI_garage_fire_LM.png</image>
+			<wrap-s>repeat</wrap-s>
+		</texture>
+		<lightmap-factor type="float" n="0">
+			<use>/scenery/LOWI/garage[0]/door[0]/position-norm</use>
+		</lightmap-factor>
+	</parameters>
+		<object-name>windows_fire_01</object-name>
+		<object-name>door_fire_1_1</object-name>
+		<object-name>door_fire_1_2</object-name>
+		<object-name>door_fire_2_1</object-name>
+		<object-name>door_fire_2_2</object-name>
+		<object-name>door_fire_3_1</object-name>
+		<object-name>door_fire_3_2</object-name>
+		<object-name>door_fire_4_1</object-name>
+		<object-name>door_fire_4_2</object-name>
+		<object-name>door_fire_5_1</object-name>
+		<object-name>door_fire_5_2</object-name>
+</effect>
+
+<!-- REMBRANDT light -->
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<name>LightSource</name>
+		<object-name>LightVolume</object-name>
+		<position>
+			<x>-0.000</x>
+			<y> 0.000</y>
+			<z> 0.200</z>
+		</position>
+		<direction>
+			<x>-11.000</x>
+			<y>  0.000</y>
+			<z>-16.000</z>
+		</direction>
+		<ambient>
+			<r>0.5</r>
+			<g>0.5</g>
+			<b>0.5</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.6</r>
+			<g>0.505</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.6</r>
+			<g>0.6</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.0002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<exponent>8.0</exponent>
+		<cutoff>90</cutoff>
+		<near-m>1.0</near-m>
+		<far-m>300</far-m>
+	</animation>
+	
+	<animation>
+	<type>select</type>
+	<object-name>LightSource</object-name>
+		<condition>
+			<and>
+			<greater-than>
+				<property>/scenery/LOWI/garage[0]/door[0]/position-norm</property>
+				<value>0.15</value>
+			</greater-than>
+			<property>/sim/rendering/rembrandt/enabled</property>
+			<greater-than>
+				<property>/sim/rendering/shaders/lights</property>
+				<value>0.0</value>
+			</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+
+<!-- Light volume models airfield light - 01 -->
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m>-27.547 </x-m>
+      <y-m>-18.985 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>50.0</heading-deg>
+    </offsets>
+</model>
+
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m>-26.649 </x-m>
+      <y-m>-19.157 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>90.0</heading-deg>
+    </offsets>
+</model>
+
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m>-25.743 </x-m>
+      <y-m>-18.982 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>130.0</heading-deg>
+    </offsets>
+</model>
+
+<!-- Light volume models airfield light - 02 -->
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m> 22.848 </x-m>
+      <y-m>-18.985 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>50.0</heading-deg>
+    </offsets>
+</model>
+
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m> 23.746 </x-m>
+      <y-m>-19.157 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>90.0</heading-deg>
+    </offsets>
+</model>
+
+<model>
+    <path>LOWI_FSZ_hangar_light.ac</path>
+    <offsets>
+      <x-m> 24.652 </x-m>
+      <y-m>-18.982 </y-m>
+      <z-m> 11.985 </z-m>
+      <pitch-deg> 0.00</pitch-deg>
+	  <heading-deg>130.0</heading-deg>
+    </offsets>
+</model>
+
+<!-- Garage Main and Garage Fire doorgroups -->
+	<animation>
+		<name>door_main_1_all</name>
+			<object-name>door_main_1_1</object-name>
+			<object-name>door_main_1_2</object-name>
+			<object-name>door_main_1_3</object-name>
+			<object-name>door_main_1_4</object-name>
+			<object-name>door_main_1_5</object-name>
+	</animation>
+
+	<animation>
+		<name>door_main_2_all</name>
+			<object-name>door_main_2_1</object-name>
+			<object-name>door_main_2_2</object-name>
+			<object-name>door_main_2_3</object-name>
+			<object-name>door_main_2_4</object-name>
+			<object-name>door_main_2_5</object-name>
+	</animation>
+	
+	<animation>
+		<name>door_fire_1_all</name>
+			<object-name>door_fire_1_1</object-name>
+			<object-name>door_fire_1_2</object-name>
+	</animation>
+	
+	<animation>
+		<name>door_fire_2_all</name>
+			<object-name>door_fire_2_1</object-name>
+			<object-name>door_fire_2_2</object-name>
+	</animation>
+	
+	<animation>
+		<name>door_fire_3_all</name>
+			<object-name>door_fire_3_1</object-name>
+			<object-name>door_fire_3_2</object-name>
+	</animation>
+	
+	<animation>
+		<name>door_fire_4_all</name>
+			<object-name>door_fire_4_1</object-name>
+			<object-name>door_fire_4_2</object-name>
+	</animation>
+	
+	<animation>
+		<name>door_fire_5_all</name>
+			<object-name>door_fire_5_1</object-name>
+			<object-name>door_fire_5_2</object-name>
+	</animation>
+	
+<!-- Garage Main Door 1 animation -->
+	<animation>
+		<type>translate</type>
+		<object-name>door_main_1_all</object-name>
+		<property>/scenery/LOWI/garage[0]/door[0]/position-norm</property>
+		<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.00 </ind><dep> 5.00 </dep></entry>
+				<entry><ind> 1.00 </ind><dep> 0.00 </dep></entry>
+			</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<!-- dont show the model after movement -->
+	<animation>
+		<type>select</type> 
+		<object-name>door_main_1_1</object-name>
+		<condition>		
+			<greater-than>		
+				<property>/scenery/LOWI/garage[0]/door[0]/position-norm</property>
+				<value>0.75</value>
+			</greater-than>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type> 
+		<object-name>door_main_1_2</object-name>
+		<condition>		
+			<greater-than>		
+				<property>/scenery/LOWI/garage[0]/door[0]/position-norm</property>
+				<value>0.55</value>
+			</greater-than>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type> 
+		<object-name>door_main_1_3</object-name>
+		<condition>		
+			<greater-than>		
+				<property>/scenery/LOWI/garage[0]/door[0]/position-norm</property>
+				<value>0.35</value>
+			</greater-than>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type> 
+		<object-name>door_main_1_4</object-name>
+		<condition>		
+			<greater-than>		
+				<property>/scenery/LOWI/garage[0]/door[0]/position-norm</property>
+				<value>0.15</value>
+			</greater-than>
+		</condition>
+	</animation>
+	
+<!-- Garage Main Door 2 - 3 animation -->
+	<animation>
+		<type>translate</type>
+		<object-name>door_fire_2_all</object-name>
+		<object-name>door_fire_3_all</object-name>
+		<property>/scenery/LOWI/garage[0]/door[0]/position-norm</property>
+		<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.00 </ind><dep> 4.10 </dep></entry>
+				<entry><ind> 1.00 </ind><dep> 0.00 </dep></entry>
+			</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<!-- dont show the model after movement -->
+	<animation>
+		<type>select</type> 
+		<object-name>door_fire_2_1</object-name>
+		<object-name>door_fire_3_1</object-name>
+		<condition>		
+			<greater-than>		
+				<property>/scenery/LOWI/garage[0]/door[0]/position-norm</property>
+				<value>0.45</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+<!-- Garage Main Door 1 - 5 animation -->
+	<animation>
+		<type>translate</type>
+		<object-name>door_fire_1_all</object-name>
+		<object-name>door_fire_4_all</object-name>
+		<property>/scenery/LOWI/garage[0]/door[1]/position-norm</property>
+		<factor>1</factor>
+			<interpolation>
+				<entry><ind> 0.00 </ind><dep> 4.10 </dep></entry>
+				<entry><ind> 1.00 </ind><dep> 0.00 </dep></entry>
+			</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<!-- dont show the model after movement -->
+	<animation>
+		<type>select</type> 
+		<object-name>door_fire_1_1</object-name>
+		<object-name>door_fire_4_1</object-name>
+		<condition>		
+			<greater-than>		
+				<property>/scenery/LOWI/garage[0]/door[1]/position-norm</property>
+				<value>0.45</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+<!-- LOD -->
+<animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>15000</max-m>
+</animation>
+
+       
+</PropertyList>

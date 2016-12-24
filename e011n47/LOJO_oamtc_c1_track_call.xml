@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+ <path>LOJO_oamtc_c1_track.ac</path>
+
+
+<nasal>
+ <load>
+ print("loading helipad LOJO");
+			var pad_name = "moveable_helipad2";
+			
+			var register_shipname = func {
+				#print("register helipad called");
+				var node_count = 0;
+				foreach (var mp_ship; props.globals.getNode("/ai/models").getChildren("ship")) {
+					var ship_name = mp_ship.getNode("name").getValue();
+					#print(ship_name);
+					if (ship_name != nil) {
+						print("register ship:  ", ship_name);
+						if (ship_name == pad_name) {	
+							print("register no:  ", node_count);
+							var ship_no = node_count;
+							print("node_count:  ", ship_no);
+							return ship_no;
+							var lat = mp_ship.getNode("position/latitude-deg").getValue();
+							var long = mp_ship.getNode("position/longitude-deg").getValue();
+							var alt = mp_ship.getNode("position/altitude-ft").getValue();
+							#print("lat:  ", lat, "  long:  ", long, "  alt:  ", alt);
+						}
+					}
+				node_count += 1;
+				}
+			}
+			
+			var pad_num = register_shipname();
+			#print("ship no:", register_shipname());
+			print("registered ship no:", pad_num);
+			
+			var es = props.globals.getNode("/sim/time/elapsed-sec").getValue() or 0;
+			
+			var lat = props.globals.getNode("/ai/models/ship[" ~ pad_num ~ "]/position/latitude-deg",1);
+			var long = props.globals.getNode("/ai/models/ship[" ~ pad_num ~ "]/position/longitude-deg",1);
+			var alt = props.globals.getNode("/ai/models/ship[" ~ pad_num ~ "]/position/altitude-ft",1);
+			var model_elev = props.globals.getNode("models/LOWI/model[1]/model-elevation",1);
+			
+			var poss = 0;
+			var loop_id = 0;
+
+				var loop = func(id) {
+				id == loop_id or return;
+				if ((es &lt;15) and (poss ==0)){
+				alt.setValue(1898.441197);
+				model_elev.setValue(1897.441329);
+				lat.setValue(47.25529964);
+				long.setValue(11.34539101);
+				#print("set helipad LOWI C1");
+				#print("ship no:  ", pad_num);
+				setprop("/ai/models/ship[" ~ pad_num ~ "]/orientation/true-heading-deg", 200);
+				#setprop("/ai/models/ship[" ~ pad_num ~ "]/orientation/true-heading-deg", 200);
+				poss=1;
+				
+				};
+				
+							
+                                        			
+				
+				 
+				
+				
+			aircraft.makeNode("models/LOWI/model[1]/path");
+			aircraft.makeNode("models/LOWI/model[1]/longitude-deg-prop");
+			aircraft.makeNode("models/LOWI/model[1]/latitude-deg-prop");
+			aircraft.makeNode("models/LOWI/model[1]/elevation-ft-prop");
+			aircraft.makeNode("models/LOWI/model[1]/heading-deg-prop");
+			setprop ("models/LOWI/model[1]/path", "Models/Geometry/moveable_helipads/LOJO_helipad_c1.xml");
+	                    setprop ("models/LOWI/model[1]/longitude-deg-prop", "/ai/models/ship[" ~ pad_num ~ "]/position/longitude-deg");
+	                    setprop ("models/LOWI/model[1]/latitude-deg-prop", "/ai/models/ship[" ~ pad_num ~ "]/position/latitude-deg");
+	                    setprop ("models/LOWI/model[1]/heading-deg-prop", "/ai/models/ship[" ~ pad_num ~ "]/orientation/true-heading-deg");
+	                    setprop ("models/LOWI/model[1]/elevation-ft-prop", "models/LOWI/model[1]/model-elevation");
+			aircraft.makeNode("models/LOWI/model[1]/load");	
+			
+			var get_tgtspeed = props.globals.getNode("models/LOWI/model[1]/controls/tgt-speed-kts",1);
+			var get_speed = props.globals.getNode("models/LOWI/model[1]/velocities/speed-kts",1);
+			var get_tgtspeed = props.globals.getNode("models/LOWI/model[1]/controls/tgt-speed-kts").getValue() or 0;
+			var get_speed = props.globals.getNode("models/LOWI/model[1]/velocities/speed-kts").getValue() or 0;
+			
+						
+			var tgtspeed = props.globals.getNode("ai/models/ship[" ~ pad_num ~ "]/controls/tgt-speed-kts",1);
+			var speed = props.globals.getNode("ai/models/ship[" ~ pad_num ~ "]/velocities/speed-kts",1);
+			
+			tgtspeed.setValue(get_tgtspeed);
+			
+			if (get_tgtspeed ==0){
+			speed.setValue(get_speed);
+			};
+			
+			var stop1 = 47.25529964;
+			var stop2 = 47.2551071343;
+			
+			var getv = props.globals.getNode("/ai/models/ship[" ~ pad_num ~ "]/velocities/speed-kts").getValue() or 0;
+			var stopv = getprop("/ai/models/ship[" ~ pad_num ~ "]/velocities/speed-kts");
+			var stoptv = getprop("/ai/models/ship[" ~ pad_num ~ "]/controls/tgt-speed-kts");
+			
+			
+			
+			var getlong = getprop("/ai/models/ship[" ~ pad_num ~ "]/position/longitude-deg");
+			var getlat = getprop("/ai/models/ship[" ~ pad_num ~ "]/position/latitude-deg");
+			var d1 = (getlat - stop1);
+			var d2 = (getlat - stop2);
+			#setprop ("/ai/models/ship[" ~ pad_num ~ "]/position/test", d1);
+			
+			if ((d1 &gt; 0.00001) and (stoptv &lt; 0)){
+			setprop("/ai/models/ship[" ~ pad_num ~ "]/velocities/speed-kts", 0);
+			setprop("/ai/models/ship[" ~ pad_num ~ "]/controls/tgt-speed-kts", 0);
+			setprop("models/LOWI/model[1]/velocities/speed-kts", 0);
+			setprop("models/LOWI/model[1]/controls/tgt-speed-kts", 0);
+			};
+			if ((d2 &lt; 0.00001) and (stoptv &gt; 0)){
+			setprop("/ai/models/ship[" ~ pad_num ~ "]/velocities/speed-kts", 0);
+			setprop("/ai/models/ship[" ~ pad_num ~ "]/controls/tgt-speed-kts", 0);
+			setprop("models/LOWI/model[1]/velocities/speed-kts", 0);
+			setprop("models/LOWI/model[1]/controls/tgt-speed-kts", 0);
+			};
+			
+				
+				settimer(func { loop(id) }, 0.1);
+			}
+			
+			
+			loop(loop_id += 1);
+		</load>
+		<unload>loop_id += 1</unload>
+ </nasal>
+
+
+
+</PropertyList>

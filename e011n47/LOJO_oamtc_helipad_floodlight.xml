@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PropertyList>
+ 
+<path>LOJO_oamtc_helipad_floodlight.ac</path>
+
+<model>
+<path>LOJO_oamtc_helipad_light_green.ac</path> 
+	<offsets> 
+		<x-m>  0.000</x-m>
+		<y-m>  0.100</y-m>
+		<z-m>  0.200</z-m>
+		<heading-deg>0</heading-deg>
+	</offsets>
+</model>
+
+	<!-- Rembrandt -->
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>Hpad_GreenLight</object-name>
+	</effect>
+
+	<!-- REMBRANDT light -->
+	<animation>
+		<type>light</type>
+		<light-type>spot</light-type>
+		<name>LightSource</name>
+		<object-name>Hpad_LightVolume</object-name>
+		<position>
+			<x>  0.000</x>
+			<y>  0.000</y>
+			<z>  0.100</z>
+		</position>
+		<direction>
+			<x>  0.000</x>
+			<y>-10.000</y>
+			<z> -0.500</z>
+		</direction>
+		<ambient>
+			<r>0.5</r>
+			<g>0.5</g>
+			<b>0.5</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.6</r>
+			<g>0.505</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.6</r>
+			<g>0.6</g>
+			<b>0.6</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>2.0</c>
+			<l>0.0002</l>
+			<q>0.05</q>
+		</attenuation>
+		<exponent>22.0</exponent>
+		<cutoff>90</cutoff>
+		<near-m>1.0</near-m>
+		<far-m>100</far-m>
+	</animation>
+
+	<animation>
+	<type>select</type>
+	<object-name>Hpad_LightVolume</object-name>
+		<condition>
+			<and>
+			<!--
+			<greater-than>
+				<property>/sim/time/sun-angle-rad</property>
+				<value>1.45</value>
+			</greater-than>
+			-->
+			<property>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[0]</property>
+			<property>/sim/rendering/rembrandt/enabled</property>
+			<greater-than>
+				<property>/sim/rendering/shaders/lights</property>
+				<value>0.0</value>
+			</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- Texture illuminate helipad light fixture -->
+	<animation>
+	<type>material</type> 
+	<object-name>helipad_light</object-name>
+		<emission>	
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>1.0</blue>
+			<factor-prop>/scenery/LOWI/LOJO_oamtc_helicopter_base[0]/light[0]</factor-prop>
+		</emission>
+	</animation>
+	
+	<!-- Green Helipad position light -->
+	<animation>
+		<type>material</type> 
+		<object-name>helipad_omni_light</object-name>
+		<condition>
+			<greater-than>
+				<property>sim/time/sun-angle-rad</property>
+				<value>1.57</value>
+			</greater-than>
+		</condition>
+		<emission>	
+			<red>0.0</red>	
+			<green>0.5</green>	
+			<blue>0.0</blue>
+		</emission>	
+	</animation>
+	
+	<!-- Green Helipad position fake light -->
+	<animation>
+		<type>noshadow</type>
+		<object-name>Hpad_GreenLight</object-name>
+	</animation>
+
+	<animation>
+		<type>alpha-test</type>
+		<alpha-factor>0.01</alpha-factor>
+	</animation>
+	
+	<animation>
+		<type>material</type> 
+		<object-name>Hpad_GreenLight</object-name>
+		<emission>	
+			<red>0.2</red>	
+			<green>1.0</green>	
+			<blue>0.2</blue>
+		</emission>	
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Hpad_GreenLight</object-name>
+		<condition>
+			<greater-than>
+				<property>sim/time/sun-angle-rad</property>
+				<value>1.57</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>range</type>
+		<object-name>Hpad_GreenLight</object-name>
+		<min-m>0</min-m>
+		<max-m>6000</max-m>
+	</animation>
+
+	<animation>
+		<type>billboard</type>
+		<object-name>Hpad_GreenLight</object-name>
+		<spherical type="bool">true</spherical>
+	</animation>
+	
+	<animation>
+		<object-name>Hpad_GreenLight</object-name>
+		<enable-hot type="bool">false</enable-hot>
+	</animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>Hpad_GreenLight</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0.025</dep>
+				</entry>
+			<entry>
+				<ind>300</ind>
+				<dep>0.15</dep>
+			</entry>
+			<entry>
+				<ind>1500</ind>
+				<dep>0.35</dep>
+			</entry>
+			<entry>
+				<ind>6000</ind>
+				<dep>0.45</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+</PropertyList>

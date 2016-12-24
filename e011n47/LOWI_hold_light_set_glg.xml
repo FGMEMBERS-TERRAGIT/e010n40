@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+<!-- HOLD light set - Hold light by longfly-->
+
+	
+	<!-- Taxiwy HOLD - Left -->
+	<model>
+		<path>Models/Airport/RGL.ac</path>
+		<offsets>
+		  <x-m> 0.000 </x-m>
+		  <y-m>-8.000 </y-m>
+		  <z-m> 0.030 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>250.0 </heading-deg>
+		</offsets>
+	</model>
+	
+		<!-- Taxiwy HOLD - Right -->
+	<model>
+		<path>Models/Airport/RGL.ac</path>
+		<offsets>
+		  <x-m>-0.000 </x-m>
+		  <y-m> 8.000 </y-m>
+		  <z-m>-0.060 </z-m>
+		  <pitch-deg> 0.00</pitch-deg>
+		  <heading-deg>290.0 </heading-deg>
+		</offsets>
+	</model>
+	
+	<animation>
+		<type>timed</type>
+			<object-name>ryellow</object-name>
+			<object-name>lyellow</object-name>
+		<use-personality type="bool">true</use-personality>
+			<branch-duration-sec>1.15</branch-duration-sec>
+			<branch-duration-sec>1.15</branch-duration-sec>
+	</animation>
+	
+
+
+	
+</PropertyList>
+

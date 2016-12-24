@@ -1,0 +1,50 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
+MATERIAL "Material.002" rgb 0.8 0.8 0.8 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 32 trans 0
+OBJECT world
+kids 1
+OBJECT group
+name "Man"
+kids 2
+OBJECT poly
+name "Man_0"
+data 8
+Cube.014
+texture "Patscherkofel_Skier1.png"
+texrep 1 1
+crease 30.000000
+numvert 4
+0 2.026821 0.430829
+0 -0.073982 0.430829
+0 -0.073981 -0.430829
+0 2.026822 -0.430829
+numsurf 1
+SURF 0x20
+mat 1
+refs 4
+0 1.0 0.999999463558
+3 1.19209232707e-007 0.999999642372
+2 0.0 3.85567375361e-007
+1 0.999999284744 0.0
+kids 0
+OBJECT poly
+name "Man_1"
+data 8
+Cube.014
+texture "Patscherkofel_Skier2.png"
+texrep 1 1
+crease 30.000000
+numvert 4
+-0.125415 2.026822 0.517382
+-0.125415 -0.073981 0.517382
+-0.125415 -0.073982 1.379039
+-0.125415 2.026821 1.37904
+numsurf 1
+SURF 0x20
+mat 1
+refs 4
+3 1.0 0.999999463558
+0 1.19209232707e-007 0.999999642372
+1 0.0 3.85567375361e-007
+2 0.999999284744 0.0
+kids 0

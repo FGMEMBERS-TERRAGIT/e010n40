@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PropertyList>
+       
+<path>LOWI_usi_b5.ac</path>	
+	
+<!-- Summer / Winter selection -->
+	
+	<animation>
+	<type>textranslate</type> 
+		<object-name>tree_01</object-name>
+			<condition>
+				<equals>
+					<property>sim/startup/season</property>
+					<value>winter</value>
+				</equals>
+			</condition>
+			<offset>0.50</offset>
+				<center>
+					<x-m> 0 </x-m>
+					<y-m> 0 </y-m>
+					<z-m> 0 </z-m>
+				</center>
+				<axis> 
+					<x> -1 </x> 
+					<y>  0 </y> 
+					<z>  0 </z> 
+				</axis>
+	</animation>
+
+<!-- LOD 
+	<animation>
+		<type>range</type>
+			<min-m>0</min-m>
+			<max-m>15000</max-m>
+	</animation>
+	-->
+       
+</PropertyList>

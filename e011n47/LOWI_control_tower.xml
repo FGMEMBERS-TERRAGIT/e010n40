@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<path>LOWI_control_tower.ac</path>
+
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path> 
+		<offsets> 
+			<x-m>-2.00</x-m>
+			<y-m>-2.00</y-m>
+			<z-m>30.00</z-m>
+			<heading-deg>0</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path> 
+		<offsets> 
+			<x-m>-2.00</x-m>
+			<y-m> 2.00</y-m>
+			<z-m>30.00</z-m>
+			<heading-deg>0</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path> 
+		<offsets> 
+			<x-m> 2.00</x-m>
+			<y-m>-2.00</y-m>
+			<z-m>30.00</z-m>
+			<heading-deg>0</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+	<path>../../../Models/Effects/pos_lamp_red_light_2st.xml</path> 
+		<offsets> 
+			<x-m> 2.00</x-m>
+			<y-m> 2.00</y-m>
+			<z-m>30.00</z-m>
+			<heading-deg>0</heading-deg>
+		</offsets>
+	</model>
+<!--
+	<model>
+	<path>Models/Effects/strobe10000.xml</path> 
+		<offsets> 
+			<x-m>20.68</x-m>
+			<y-m>-1.5</y-m>
+			<z-m>26</z-m>
+			<heading-deg>0</heading-deg>
+		</offsets>
+	</model>
+-->
+
+<!-- LOD -->
+<animation>
+	<type>range</type>
+	<min-m>0</min-m>
+	<max-m>15000</max-m>
+</animation>
+
+</PropertyList>
+
