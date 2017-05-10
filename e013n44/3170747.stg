@@ -1,5 +1,7 @@
 OBJECT_SHARED Models/Airport/ndb.ac 13.753517 44.889208 0 180
-OBJECT_SHARED Models/Airport/ils.xml 13.94 44.893056 80.49 90.87
+OBJECT_SHARED Models/Airport/ndb.ac 13.853083 44.892467 35.35 0
+OBJECT_SHARED Models/Airport/ndb.ac 13.891156 44.892861 53.5 0
+OBJECT_SHARED Models/Airport/ils.xml 13.935503 44.892721 74.26 90.87
 OBJECT_SHARED Models/Communications/vordme_1.xml 13.918128 44.892367 56.64 180
 OBJECT_SHARED Models/Airport/marker.ac 13.958056 44.894444 104.34 180
 OBJECT_SHARED Models/Airport/localizer.xml 13.905 44.893333 51.04 358.63
@@ -87,3 +89,5 @@ OBJECT_SHARED Models/Trees/billboard-tree.xml 13.92084 44.89749 63.09 0
 OBJECT_SHARED Models/Trees/billboard-tree.xml 13.92103 44.89748 63.24 0
 OBJECT_SHARED Models/Trees/billboard-tree.xml 13.92058 44.89747 62.94 0
 # END dsf2stg
+OBJECT_SHARED Models/Airport/marker.ac 13.953581 44.894212 98.15 180
+OBJECT_SHARED Models/Airport/localizer.xml 13.900366 44.893078 47.48 90.87

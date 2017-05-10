@@ -52,3 +52,5 @@ OBJECT_SHARED Models/Trees/billboard-tree.xml 11.59306 48.64810 383.28 0
 OBJECT_SHARED Models/Trees/billboard-tree.xml 11.59306 48.64717 383.33 315
 OBJECT_SHARED Models/Trees/billboard-tree.xml 11.59273 48.64614 383.30 235.01
 # END dsf2stg
+OBJECT_SHARED Models/Airport/localizer.xml 11.5125 48.703 365.67 110.38
+OBJECT_SHARED Models/Agriculture/farmhouse1.ac 11.505421 48.708939 366.71 350

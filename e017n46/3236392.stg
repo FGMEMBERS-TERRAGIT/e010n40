@@ -99,3 +99,4 @@ OBJECT_SHARED Models/Airport/tower_small_airfield.xml 17.16250 46.68933 123.82 1
 OBJECT_SHARED Models/Airport/water-tower-150-red-white.xml 17.17453 46.67189 110.00 0
 OBJECT_SHARED Models/Airport/water-tower-150-red-white.xml 17.17453 46.67189 110.00 0
 # END dsf2stg
+OBJECT_SHARED Models/Airport/localizer.xml 17.164142 46.672989 118.3 195

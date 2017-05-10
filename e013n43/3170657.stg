@@ -2,7 +2,6 @@ OBJECT_SHARED Models/Airport/ndb.ac 13.472222 43.586667 243.16 180
 OBJECT_SHARED Models/Airport/ils.xml 13.372278 43.621889 6.21 134
 OBJECT_SHARED Models/Airport/tacan.xml 13.299528 43.576861 42.13 180
 OBJECT_SHARED Models/Communications/vordme_1.xml 13.372583 43.621889 6.67 180
-OBJECT_SHARED Models/Communications/vordme_1.xml 13.471111 43.586389 251.39 180
 OBJECT_SHARED Models/Airport/localizer.xml 13.347889 43.605833 12.84 314.79
 # dsf2stg
 # do not edit below this line
@@ -143,3 +142,4 @@ OBJECT_SHARED Models/lib/rw-guard-lights.ac 13.36043 43.61383 10.05 135.44
 OBJECT_SHARED Models/lib/rw-guard-lights.ac 13.35150 43.60732 12.70 137.25
 OBJECT_SHARED Models/lib/rw-guard-lights.ac 13.35538 43.61027 11.46 90
 # END dsf2stg
+OBJECT_SHARED Models/Communications/VOR-DME_3.ac 13.471111 43.586389 251.39 180

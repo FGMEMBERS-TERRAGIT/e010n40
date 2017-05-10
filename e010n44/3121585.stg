@@ -348,3 +348,4 @@ OBJECT_SHARED Models/Effects/taxilampblue.xml 10.29786 44.82347 43.81 0
 OBJECT_SHARED Models/Effects/taxilampblue.xml 10.29804 44.82387 43.63 0
 OBJECT_SHARED Models/Effects/taxilampblue.xml 10.29833 44.82380 43.64 0
 # END dsf2stg
+OBJECT_SHARED Models/Airport/localizer.xml 10.292194 44.815568 49.02 161.66

@@ -1,7 +1,6 @@
 OBJECT_SHARED Models/Airport/ndb.ac 13.360694 45.828158 3.65 180
 OBJECT_SHARED Models/Airport/ils.xml 13.454161 45.829325 8.08 268.93
 OBJECT_SHARED Models/Communications/vordme_1.xml 13.45425 45.8295 8.11 180
-OBJECT_SHARED Models/Communications/vordme_1.xml 13.480283 45.829817 8.94 180
 OBJECT_SHARED Models/Airport/marker.ac 13.360222 45.828806 4 180
 OBJECT_SHARED Models/Airport/marker.ac 13.435444 45.827972 6.88 180
 OBJECT_SHARED Models/Airport/localizer.xml 13.491133 45.827736 5.06 180.45
@@ -54,3 +53,5 @@ OBJECT_SHARED Models/Airport/tower_small_airfield.xml 13.47851 45.82225 7.48 9.6
 OBJECT_SHARED Models/lib/FireStationLg.ac 13.48716 45.82246 7.41 189.17
 OBJECT_SHARED Models/lib/office65x50.ac 13.47723 45.82352 7.37 205.28
 # END dsf2stg
+OBJECT_SHARED Models/Airport/localizer.xml 13.491133 45.827736 5.06 268.93
+OBJECT_SHARED Models/Communications/VOR-DME_3.ac 13.480283 45.829817 8.94 180
