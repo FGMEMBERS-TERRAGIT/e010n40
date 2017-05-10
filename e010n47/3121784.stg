@@ -1,7 +1,10 @@
+OBJECT_SHARED Models/Communications/vordme_1.xml 10.231234 47.988701 629.37 0
+OBJECT_SHARED Models/Communications/vordme_1.xml 10.233883 47.99205 626.1 0
 OBJECT_SHARED Models/Commercial/generic_skyscraper_07.ac 10.1572222 47.9908333 172.88 180
 OBJECT_SHARED Models/Power/generic_pylon_100m.ac 10.1380556 47.9869444 559.38 180
 OBJECT_SHARED Models/Power/generic_pylon_100m.ac 10.2102778 47.9369444 593.28 180
 OBJECT_SHARED Models/Misc/generic_church_02.ac 10.1794444 47.9866667 605.27 180
+OBJECT_SHARED Models/Airport/localizer.xml 10.221617 47.981716 628.98 121
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 10.1334032 47.976793 624.23 272.69
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 10.1381546 47.9869944 589.89 50.5
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 10.1424165 47.938454 636.97 227.29

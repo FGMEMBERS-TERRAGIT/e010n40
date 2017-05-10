@@ -26,7 +26,7 @@ OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 11.1255556 49.4663889 -12
 OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 11.13 49.4052778 -51.65 180
 OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 11.2002778 49.4830556 -114.99 180
 OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 11.2461111 49.4697222 -100.97 180
-OBJECT_SHARED Models/Airport/localizer.xml 11.100817 49.496453 321.28 188.63
+OBJECT_SHARED Models/Airport/localizer.xml 11.100817 49.496453 321.28 261.49
 OBJECT_SHARED Models/Misc/generic_castle.xml 11.0766667 49.4577778 332.41 180
 OBJECT_SHARED Models/Industrial/entrepotblanc-ba.xml 11.0865485 49.4926304 312.81 81.6
 OBJECT_SHARED Models/Airport/Jetway/jetway-20.xml 11.076082 49.4949403 308.94 84

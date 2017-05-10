@@ -9,7 +9,7 @@ OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 10.8697222 48.4911111 4.2
 OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 10.8822222 48.4416667 30.07 180
 OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 10.8988889 48.38 82.34 180
 OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 10.9344444 48.4030556 49.87 180
-OBJECT_SHARED Models/Airport/localizer.xml 10.920947 48.422806 458.93 341.39
+OBJECT_SHARED Models/Airport/localizer.xml 10.920947 48.422806 458.93 108.53
 OBJECT_SHARED Models/Power/generic_power_plant.xml 10.9391667 48.4008333 472.81 239.29
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 10.8474484 48.407254 477.65 3.52
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 10.8476839 48.407082 477.76 2.98
