@@ -1,5 +1,5 @@
-OBJECT_SHARED Models/Airport/ils.xml 18.741389 42.395917 8.79 158.92
 OBJECT_SHARED Models/Communications/vordme_1.xml 18.741361 42.396 8.84 180
+OBJECT_SHARED Models/Airport/localizer.xml 18.741389 42.395917 8.79 20
 OBJECT_SHARED Models/Aircraft/HH-60-lowpoly.xml 18.7193947 42.4107772 4.57 36
 OBJECT_SHARED Models/Airport/caisses1.xml 18.7171204 42.4123362 2.74 144
 OBJECT_SHARED Models/Airport/caisses_services.xml 18.7172307 42.412329 2.87 308

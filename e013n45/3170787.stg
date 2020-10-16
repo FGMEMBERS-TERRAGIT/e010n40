@@ -182,6 +182,9 @@ OBJECT_SHARED Models/StreetFurniture/RailPower.ac 13.9663 45.62384 530.33 45.97
 OBJECT_SHARED Models/StreetFurniture/RailPower.ac 13.96684 45.62422 530.31 43.76
 OBJECT_SHARED Models/StreetFurniture/RailPower.ac 13.96741 45.62458 530.9 42.61
 OBJECT_SHARED Models/StreetFurniture/RailPower.ac 13.96798 45.62495 531.58 42.61
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.7762093 45.6194409 0.08 40
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.7771588 45.6184777 1.4 36
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.7779919 45.6175836 0.57 32
 OBJECT_SHARED Models/Misc/church36m_red.ac 13.8505756 45.5465456 163.1 180
 OBJECT_SHARED Models/Misc/church36m_red.ac 13.8568033 45.549947 173.09 180
 OBJECT_SHARED Models/Misc/church36m_red.ac 13.8689839 45.5576423 126.95 180

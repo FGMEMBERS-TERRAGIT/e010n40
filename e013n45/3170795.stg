@@ -4,6 +4,12 @@ OBJECT_SHARED Models/Industrial/GenericStorageTank10m.ac 13.8718837 45.7089457 2
 OBJECT_SHARED Models/Industrial/GenericStorageTank10m.ac 13.8719765 45.708931 281.68 0
 OBJECT_SHARED Models/Industrial/GenericStorageTank10m.ac 13.8720519 45.7089067 281.12 0
 OBJECT_SHARED Models/Aircraft/Cessna150.xml 13.99751665 45.6834253 421.84 96
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.757801 45.6279263 0 116
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.7589348 45.6282453 0 112
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.7594518 45.6284241 0 112
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.7605804 45.6287434 0 108
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.7617269 45.6291305 0.02 108
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.7635675 45.6296361 0.39 112
 OBJECT_SHARED Models/Transport/storage_container_20ft_white.ac 13.9978266 45.68372236 421.59 48
 OBJECT_SHARED Models/Aircraft/DR400-red.xml 13.99756274 45.68364064 421.63 44
 OBJECT_SHARED Models/Maritime/Civilian/Lighthouse.xml 13.756936 45.675615 55.23 0
@@ -22,3 +28,5 @@ OBJECT_SHARED Models/Misc/church36m_blue2.ac 13.8785298 45.7439448 346.32 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 13.8786077 45.743916 346.88 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 13.9924222 45.6737622 473.59 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 13.9939306 45.665744 405.44 180
+OBJECT_SHARED Models/Maritime/Civilian/container_carier.ac 13.759315 45.6280855 0 292
+OBJECT_SHARED Models/Maritime/Civilian/container_carier.ac 13.7618378 45.6288704 -0.01 112
