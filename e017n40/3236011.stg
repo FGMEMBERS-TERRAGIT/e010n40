@@ -151,4 +151,6 @@ OBJECT_SHARED Models/lib/lamp10m.xml 17.93885 40.65820 9.03 -53.39
 OBJECT_SHARED Models/lib/lamp10m.xml 17.93832 40.65837 9.17 270
 OBJECT_SHARED Models/lib/lamp10m.xml 17.93778 40.65787 9.59 38.48
 # END dsf2stg
+OBJECT_SHARED Models/Airport/localizer.xml 17.92332 40.677668 4.7 47.15
 OBJECT_SHARED Models/Maritime/Civilian/Lighthouse.xml 17.967477 40.655386 -2.4 0
+OBJECT_SHARED Models/Airport/LOWI_ILS_glideslope2.xml 17.944778 40.658333 6.68 42.33

@@ -1,5 +1,4 @@
 OBJECT_SHARED Models/Airport/ndb.ac 16.042067 45.725361 104.88 180
-OBJECT_SHARED Models/Airport/ils.xml 16.05345 45.734942 104.86 311.38
 OBJECT_SHARED Models/Communications/vordme_1.xml 16.05345 45.734942 104.86 180
 OBJECT_SHARED Models/Airport/marker.ac 16.042142 45.725403 104.93 180
 OBJECT_SHARED Models/Airport/localizer.xml 16.048642 45.729686 105.02 316.69
@@ -109,3 +108,4 @@ OBJECT_SHARED Models/lib/luggage-truck-HD.ac 16.05728 45.73040 104.43 218.66
 OBJECT_SHARED Models/lib/luggage-train-straight2-HD.ac 16.05722 45.73044 104.43 224.27
 OBJECT_SHARED Models/lib/caisses_group.ac 16.05714 45.73048 104.42 222.48
 # END dsf2stg
+OBJECT_SHARED Models/Airport/LOWI_ILS_glideslope2.xml 16.05345 45.734942 104.86 311.38

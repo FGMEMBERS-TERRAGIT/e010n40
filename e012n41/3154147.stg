@@ -1,6 +1,5 @@
 OBJECT_SHARED Models/Airport/ndb.ac 12.919556 41.541167 17.02 180
 OBJECT_SHARED Models/Airport/ndb.ac 12.943611 41.524444 14.95 180
-OBJECT_SHARED Models/Communications/vordme_1.xml 12.918056 41.541111 16.94 180
 OBJECT_SHARED Models/Airport/GenericFuelStore3.ac 12.90945 41.546103 25.06 60
 OBJECT_SHARED Models/Airport/big-hangar.ac 12.913173 41.545863 24.04 135
 OBJECT_SHARED Models/Airport/thangar2.ac 12.910507 41.545502 24.42 70
@@ -351,3 +350,4 @@ OBJECT_SHARED Models/lib/deciduous-tree2.xml 12.91012 41.54652 25.16 0
 OBJECT_SHARED Models/lib/office40x25.ac 12.90980 41.54699 25.60 268
 OBJECT_SHARED Models/Airport/tower_small_airfield.xml 12.90942 41.54572 24.87 332
 # END dsf2stg
+OBJECT_SHARED Models/Communications/VOR-DME_3.ac 12.918056 41.541111 16.94 180

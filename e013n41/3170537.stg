@@ -194,3 +194,4 @@ OBJECT_SHARED Models/lib/taxilight-HD-yy.ac 13.29285 41.64617 182.83 90
 OBJECT_SHARED Models/lib/taxilight-HD-yy.ac 13.29273 41.64667 183.24 90
 OBJECT_SHARED Models/lib/taxilight-HD-yy.ac 13.29266 41.64665 183.24 90
 # END dsf2stg
+OBJECT_SHARED Models/Communications/VOR-DME_3.ac 13.295 41.642222 178.81 180

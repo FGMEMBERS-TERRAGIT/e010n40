@@ -1,5 +1,5 @@
-OBJECT_SHARED Models/Airport/ndb.ac 12.490111 41.945111 19.37 180
-OBJECT_SHARED Models/Commercial/generic_skyscraper_04.ac 12.482323 41.895466 -396.35 180
+OBJECT_SHARED Models/Airport/ndb.ac 12.490044 41.944693 18.82 180
+OBJECT_SHARED Models/Commercial/generic_skyscraper_04.ac 12.475614 41.830349 -387.53 180
 OBJECT_STATIC colosseo.ac 12.49250373 41.890194 27.95 260
 # dsf2stg
 # do not edit below this line
@@ -10,3 +10,5 @@ OBJECT_SHARED Models/Airport/Avgas_Pump.ac 12.49665 41.95279 16.56 43.29
 OBJECT_SHARED Models/Airport/GenericFuelStore1.ac 12.49696 41.95254 16.37 132
 OBJECT_SHARED Models/Airport/GenericFuelStore1.ac 12.49708 41.95244 16.32 132
 # END dsf2stg
+OBJECT_STATIC PlaceStPierre.ac 12.45506 41.90219 57.4 91.6
+OBJECT_STATIC BasilStPierre.ac 12.45506 41.90219 57.4 91.45

@@ -1,5 +1,4 @@
 OBJECT_SHARED Models/Airport/ndb.ac 12.452844 41.679719 52.03 180
-OBJECT_SHARED Models/Airport/ils.xml 12.453867 41.648964 10.81 49.05
 OBJECT_SHARED Models/Communications/vordme_1.xml 12.453867 41.648964 10.81 180
 OBJECT_SHARED Models/Airport/localizer.xml 12.429081 41.663436 13.35 40.02
 # dsf2stg
@@ -33,3 +32,4 @@ OBJECT_SHARED Models/Airport/tower_small_airfield.xml 12.44702 41.65867 16.57 14
 OBJECT_SHARED Models/lib/SmHangar.ac 12.45297 41.66187 25.28 29
 OBJECT_SHARED Models/lib/SmHangar.ac 12.45277 41.66211 25.34 29
 # END dsf2stg
+OBJECT_SHARED Models/Airport/LOWI_ILS_glideslope2.xml 12.453867 41.648964 10.81 49.05

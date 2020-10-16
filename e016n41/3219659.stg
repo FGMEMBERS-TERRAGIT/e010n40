@@ -1,4 +1,3 @@
-OBJECT_SHARED Models/Airport/ils.xml 16.750361 41.136833 48.5 290.47
 OBJECT_SHARED Models/Communications/vordme_1.xml 16.750278 41.137083 48.43 180
 OBJECT_SHARED Models/Communications/vordme_1.xml 16.77645 41.144261 25.35 180
 OBJECT_SHARED Models/Airport/localizer.xml 16.776833 41.143111 26.15 159.42
@@ -103,4 +102,7 @@ OBJECT_SHARED Models/lib/rw-guard-lights.ac 16.76779 41.13959 35.79 156.8
 OBJECT_SHARED Models/lib/rw-guard-lights.ac 16.77432 41.14140 29.49 75.25
 OBJECT_SHARED Models/lib/rw-guard-lights.ac 16.77403 41.14146 29.60 75.96
 # END dsf2stg
+OBJECT_SHARED Models/Airport/localizer.xml 16.776833 41.143111 26.15 290.47
+OBJECT_SHARED Models/Airport/EUROPOLES_GLS.xml 16.750361 41.136833 48.5 290.47
+OBJECT_SHARED Models/Communications/VOR-DME_3.ac 16.77645 41.144261 25.35 180
 OBJECT_SHARED Models/Maritime/Civilian/Lighthouse.xml 16.844993 41.139111 -1.03 0

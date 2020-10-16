@@ -1,7 +1,6 @@
-OBJECT_SHARED Models/Communications/radio-medium.xml 11.7283333 47.8683333 597.6 180
-OBJECT_SHARED Models/Commercial/generic_skyscraper_09.ac 11.6852778 47.7938889 355.44 180
 OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 11.7425 47.7602778 326.37 180
 OBJECT_SHARED Models/Misc/generic_church_02.ac 11.5597222 47.7605556 657.93 180
+OBJECT_SHARED Models/Misc/generic_church_02.ac 11.666735 47.812492 733.95 287
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 11.6732239 47.8420649 735.36 79.62
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 11.6877086 47.8744211 695.55 306.74
 OBJECT_SHARED Models/Power/generic_pylon_50m.ac 11.6907801 47.8667168 697.8 354.56
@@ -97,3 +96,17 @@ OBJECT_SHARED Models/lib/deciduous-tree3.xml 11.70325 47.82502 724.33 246.801
 OBJECT_SHARED Models/lib/deciduous-tree3.xml 11.70316 47.82504 724.33 0
 OBJECT_SHARED Models/lib/SmHangar.ac 11.70356 47.82510 723.87 157.166
 # END dsf2stg
+OBJECT_SHARED Models/Misc/big-church.ac 11.686267 47.790274 766.98 270
+OBJECT_SHARED Models/Residential/zone_maisons_grd.xml 11.669025 47.811252 739.46 0
+OBJECT_SHARED Models/Effects/RedLight10000.xml 11.6851832 47.7938527 806.71 0
+OBJECT_SHARED Models/Effects/RedLight10000.xml 11.6852132 47.7939471 806.38 0
+OBJECT_SHARED Models/Effects/RedLight10000.xml 11.6852764 47.7938909 846.24 0
+OBJECT_SHARED Models/Effects/RedLight10000.xml 11.685318 47.7938233 806.98 0
+OBJECT_SHARED Models/Effects/RedLight10000.xml 11.6853757 47.7939256 806.66 0
+OBJECT_SHARED Models/Agriculture/farmhouse2.ac 11.703503 47.825153 725.99 67
+OBJECT_SHARED Models/Communications/fremersbergturm.xml 11.6852778 47.7938889 764.44 180
+OBJECT_SHARED Models/Misc/Church_generic_twintower_oniondome.ac 11.636989 47.813443 725.97 270
+OBJECT_SHARED Models/Misc/church36m_red.ac 11.721017 47.822823 746.54 0
+OBJECT_SHARED Models/Misc/church36m_blue2.ac 11.64171 47.80703 711.36 107
+OBJECT_SHARED Models/Sport/terrain_de_foot_generic.ac 11.703089 47.824447 727.02 156
+OBJECT_SHARED Models/Airport/Hangar_14x20m.ac 11.703647 47.82525 725.04 160

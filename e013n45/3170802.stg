@@ -1,3 +1,14 @@
+OBJECT_SHARED Models/Industrial/generic_chimney_01.xml 13.5461054 45.7952507 -378.26 0
+OBJECT_SHARED Models/Industrial/GenericStorageTank50m.ac 13.5480829 45.7950826 -74.11 0
+OBJECT_SHARED Models/Industrial/GenericStorageTank50m.ac 13.5486297 45.7956804 -73.38 0
+OBJECT_SHARED Models/Industrial/GenericStorageTank50m.ac 13.5487749 45.7946025 -73.13 0
+OBJECT_SHARED Models/Industrial/GenericStorageTank50m.ac 13.5492919 45.7951374 -71.86 0
+OBJECT_SHARED Models/Maritime/Civilian/CruiseShip.ac 13.5444735 45.7898292 0 224.8
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.5465403 45.7914247 -0.56 224
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.54727 45.7907804 -0.55 220
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.5522078 45.787766 0.4 29.8
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.5531812 45.7866388 2.6 32
+OBJECT_SHARED Models/Industrial/ContainerCrane.xml 13.55508 45.7844487 0.43 32.7
 OBJECT_SHARED Models/Maritime/Misc/right_bank_beacon.ac 13.5680553 45.766918 -0.5 323.82
 OBJECT_SHARED Models/Maritime/Misc/right_bank_beacon.ac 13.5770693 45.7614896 -0.99 306.89
 OBJECT_SHARED Models/Maritime/Misc/right_bank_beacon.ac 13.586329 45.7551247 -1.55 94.97
@@ -18,3 +29,6 @@ OBJECT_SHARED Models/Misc/church36m_blue2.ac 13.6653239 45.8252192 302.11 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 13.7067693 45.8188248 301.5 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 13.7125468 45.8023453 199.71 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 13.7125573 45.8023808 199.83 180
+OBJECT_SHARED Models/Maritime/Civilian/container_carier.ac 13.5516338 45.788156 0 212
+OBJECT_SHARED Models/Maritime/Civilian/container_carier.ac 13.5529982 45.7865651 0 32
+OBJECT_STATIC si-cerje-monument.ac 13.61587625 45.8724124 334.05 88
