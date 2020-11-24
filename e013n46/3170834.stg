@@ -2,3 +2,10 @@ OBJECT_SHARED Models/Misc/church36m_red.ac 13.5510124 46.3393205 478.32 0
 OBJECT_SHARED Models/Misc/church36m_red.ac 13.5579363 46.3355209 447.89 0
 OBJECT_SHARED Models/Misc/church36m_red.ac 13.5788731 46.3504378 507.67 0
 OBJECT_SHARED Models/Misc/church36m_blue.ac 13.6668214 46.3422421 495.37 180
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/lib/prop_a.ac 13.55350 46.33109 0.00 20
+OBJECT_SHARED Models/Transport/hatchback_black.ac 13.55393 46.33077 438.06 20
+OBJECT_SHARED Models/Transport/van_red.ac 13.55388 46.33076 438.25 20
+# END dsf2stg

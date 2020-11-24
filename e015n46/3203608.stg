@@ -77,3 +77,8 @@ OBJECT_SHARED Models/Misc/church36m_blue.ac 15.1515423 46.4695058 562.92 180
 OBJECT_SHARED Models/Misc/church36m_blue.ac 15.1970973 46.441058 606.07 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 15.0084711 46.4494058 880.73 180
 OBJECT_STATIC LJSG_hangar.ac 15.11960295 46.4723034 499.99 41.5
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/lib/MedHangar.ac 15.04498 46.39616 0.00 212.5
+# END dsf2stg

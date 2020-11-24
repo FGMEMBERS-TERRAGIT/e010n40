@@ -3,3 +3,8 @@ OBJECT_SHARED Models/Maritime/Misc/Buoy-Conical-Green.ac 13.8248643 44.873485 0 
 OBJECT_SHARED Models/Maritime/Misc/Buoy-Conical-Green.ac 13.8257262 44.8738277 -0.01 359.97
 OBJECT_SHARED Models/Maritime/Misc/Buoy-Cylindrical-Red.ac 13.8244884 44.8739954 0 232.57
 OBJECT_SHARED Models/Maritime/Misc/Buoy-Cylindrical-Red.ac 13.8253541 44.8743262 -0.01 160.96
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/lib/vintage-tower-hangar.ac 13.90210 44.84528 0.00 59.04
+# END dsf2stg

@@ -36,3 +36,10 @@ OBJECT_SHARED Models/Misc/church36m_green.ac 15.9307841 46.3940159 221.92 180
 OBJECT_SHARED Models/Misc/church36m_blue.ac 15.9306622 46.3939715 221.92 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 15.7764303 46.4906811 250.52 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 15.9713751 46.4857111 236.04 180
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/lib/prop_a.ac 15.98470 46.42610 0.00 331.442
+OBJECT_SHARED Models/lib/prop_a.ac 15.98452 46.42521 211.88 237
+OBJECT_SHARED Models/lib/vintage-tower-hangar.ac 15.98462 46.42514 211.97 238
+# END dsf2stg

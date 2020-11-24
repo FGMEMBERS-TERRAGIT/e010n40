@@ -102,3 +102,8 @@ OBJECT_SHARED Models/Misc/church36m_blue.ac 15.3883871 46.3747471 397.66 180
 OBJECT_SHARED Models/Misc/church36m_blue.ac 15.4143965 46.3357294 384.66 180
 OBJECT_SHARED Models/Misc/church36m_blue.ac 15.4464509 46.2536531 336.24 180
 OBJECT_SHARED Models/Misc/church36m_blue2.ac 15.2597589 46.2526365 244.53 180
+# dsf2stg
+# do not edit below this line
+#
+OBJECT_SHARED Models/lib/LongRow.ac 15.49067 46.31010 0.00 289.5
+# END dsf2stg
